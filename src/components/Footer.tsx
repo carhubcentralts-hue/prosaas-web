@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import content from '../../content/site.he.json';
 
 export default function Footer() {
@@ -12,13 +13,13 @@ export default function Footer() {
           
           <div className="flex items-center gap-6">
             {content.footer.links.map((link, index) => (
-              <a 
+              <Link 
                 key={index}
                 href={link.url}
                 className="text-gray-400 hover:text-white transition"
               >
                 {link.text}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

@@ -12,16 +12,6 @@ export default function VoiceDemo() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handlePlay = async () => {
-    if (!text.trim()) {
-      setErrorMessage('נא להזין טקסט');
-      setStatus('error');
-      setTimeout(() => {
-        setStatus('idle');
-        setErrorMessage('');
-      }, 2000);
-      return;
-    }
-
     setStatus('loading');
     setErrorMessage('');
     
@@ -30,55 +20,35 @@ export default function VoiceDemo() {
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;
+        audioRef.current.src = ''; // Release the audio resource
         audioRef.current = null;
       }
 
-      // Call TTS API
-      const response = await fetch('/api/tts', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          voice: selectedVoice,
-          text: text,
-          format: 'mp3',
-        }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({ error: 'שגיאה בשרת' }));
-        throw new Error(errorData.error || 'לא הצלחתי לנגן כרגע');
-      }
-
-      // Get audio blob
-      const blob = await response.blob();
-      const audioUrl = URL.createObjectURL(blob);
-      
-      // Create and play audio
+      // Try to load static audio file from /voices directory
+      const audioUrl = `/voices/${selectedVoice}.mp3`;
       const audio = new Audio(audioUrl);
       audioRef.current = audio;
       
       audio.onplay = () => setStatus('playing');
       audio.onended = () => {
         setStatus('idle');
-        URL.revokeObjectURL(audioUrl);
       };
       audio.onerror = () => {
+        // If file doesn't exist (404), show "preparing" message
         setStatus('error');
-        setErrorMessage('לא הצלחתי לנגן כרגע');
+        setErrorMessage(content.voiceDemo.preparing);
         setTimeout(() => {
           setStatus('idle');
           setErrorMessage('');
         }, 3000);
-        URL.revokeObjectURL(audioUrl);
       };
       
+      // Try to play the audio
       await audio.play();
     } catch (error) {
-      console.error('Error playing audio:', error);
+      // If audio file doesn't exist or can't play, show preparing message
       setStatus('error');
-      setErrorMessage(error instanceof Error ? error.message : 'לא הצלחתי לנגן כרגע');
+      setErrorMessage(content.voiceDemo.preparing);
       setTimeout(() => {
         setStatus('idle');
         setErrorMessage('');
@@ -101,6 +71,8 @@ export default function VoiceDemo() {
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
+        audioRef.current.src = ''; // Release the audio resource
+        audioRef.current = null;
       }
     };
   }, []);

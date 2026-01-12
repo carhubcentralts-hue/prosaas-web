@@ -64,8 +64,8 @@ export async function POST(request: NextRequest) {
     if (!apiKey) {
       console.error('OPENAI_API_KEY is not set in environment variables');
       return NextResponse.json(
-        { error: 'שירות השמע אינו זמין כרגע' },
-        { status: 500 }
+        { error: 'Not configured - TTS service requires OPENAI_API_KEY' },
+        { status: 501 }
       );
     }
 

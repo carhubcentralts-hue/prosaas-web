@@ -86,6 +86,7 @@ export default function VoiceDemo() {
                 <select
                   value={selectedVoice}
                   onChange={(e) => setSelectedVoice(e.target.value)}
+                  aria-label="בחירת קול לדוגמה"
                   className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 pl-10 text-white focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent appearance-none cursor-pointer"
                 >
                   {content.voiceDemo.voices.map((voice) => (

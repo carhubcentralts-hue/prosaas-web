@@ -1,21 +1,118 @@
-# ProSaaS Web
+# ProSaaS Landing Page
 
-אתר תדמית ודף נחיתה ל-ProSaaS - מערכת CRM + בוט WhatsApp + בוט שיחות בזמן אמת.
+דף נחיתה ואתר תדמית ל-ProSaaS - מערכת CRM מתקדמת עם בוט WhatsApp ובוט שיחות בזמן אמת.
 
-## מבנה הפרויקט
+## 🚀 טכנולוגיות
 
-```
-/landing    # Next.js אתר תדמית
-```
+- **Next.js 16** (App Router)
+- **TypeScript**
+- **TailwindCSS**
+- **RTL מלא** - עברית מימין לשמאל
 
-## הרצה מקומית
+## 📦 התקנה והרצה מקומית
 
 ```bash
-cd landing
+# התקנת תלויות
 npm install
+
+# הרצה בסביבת פיתוח
 npm run dev
+
+# בנייה לייצור
+npm run build
+
+# הרצה בייצור
+npm run start
 ```
 
-## פריסה
+פתחו את [http://localhost:3000](http://localhost:3000) בדפדפן.
 
-האתר מוכן לפריסה ב-Vercel. ראו [landing/README.md](landing/README.md) להוראות מפורטות.
+## 🌐 פריסה ב-Vercel
+
+1. העלו את הקוד ל-GitHub
+2. התחברו ל-[Vercel](https://vercel.com)
+3. צרו פרויקט חדש וחברו את הריפו
+4. Vercel יזהה אוטומטית שזה Next.js ויבנה
+
+## 📝 עריכת תוכן
+
+כל הטקסטים נמצאים בקובץ אחד:
+
+```
+content/site.he.json
+```
+
+ניתן לשנות:
+- כותרות ותתי-כותרות
+- תכונות ויכולות
+- מחירים וחבילות
+- שאלות נפוצות
+- פרטי קשר
+- קולות להדגמה
+
+## 🎤 קבצי אודיו לדמו
+
+הוסיפו קבצי MP3 לתיקיית `public/voices/`:
+
+- `alloy.mp3`
+- `ash.mp3`
+- `ballad.mp3`
+- `coral.mp3`
+- `echo.mp3` (ברירת מחדל)
+- `sage.mp3`
+- `shimmer.mp3`
+- `verse.mp3`
+- `marin.mp3`
+
+## 📁 מבנה הפרויקט
+
+```
+├── content/
+│   └── site.he.json      # כל הטקסטים
+├── public/
+│   └── voices/           # קבצי אודיו
+├── src/
+│   ├── app/
+│   │   ├── api/lead/     # API לטופס לידים
+│   │   ├── layout.tsx    # Layout ראשי
+│   │   ├── page.tsx      # דף הבית
+│   │   └── globals.css   # סגנונות גלובליים
+│   └── components/
+│       ├── Navbar.tsx
+│       ├── Hero.tsx
+│       ├── WhatIs.tsx
+│       ├── Features.tsx
+│       ├── VoiceDemo.tsx
+│       ├── Integrations.tsx
+│       ├── Pricing.tsx
+│       ├── FAQ.tsx
+│       ├── Contact.tsx
+│       └── Footer.tsx
+└── package.json
+```
+
+## 🔧 API
+
+### POST /api/lead
+
+מקבל פרטי ליד:
+
+```json
+{
+  "name": "שם מלא",
+  "phone": "050-1234567",
+  "business": "שם העסק",
+  "message": "הודעה"
+}
+```
+
+## 📱 רספונסיביות
+
+האתר מותאם לכל גדלי המסך:
+- מובייל (iPhone)
+- טאבלט
+- דסקטופ
+
+## 📄 License
+
+MIT

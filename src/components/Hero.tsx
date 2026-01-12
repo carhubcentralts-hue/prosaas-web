@@ -37,18 +37,12 @@ export default function Hero() {
         
         {/* Stats */}
         <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-gray-900">+500</div>
-            <div className="text-sm text-gray-500">עסקים</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-gray-900">24/7</div>
-            <div className="text-sm text-gray-500">זמינות</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-gray-900">99%</div>
-            <div className="text-sm text-gray-500">שביעות רצון</div>
-          </div>
+          {content.hero.stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="text-3xl font-bold text-gray-900">{stat.value}</div>
+              <div className="text-sm text-gray-500">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

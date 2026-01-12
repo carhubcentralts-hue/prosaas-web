@@ -129,7 +129,7 @@ export default function VoiceDemo() {
                 >
                   {content.voiceDemo.voices.map((voice) => (
                     <option key={voice.id} value={voice.id}>
-                      {voice.name} ({voice.description})
+                      {voice.name}
                     </option>
                   ))}
                 </select>

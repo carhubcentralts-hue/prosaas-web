@@ -7,39 +7,81 @@ export default function VoiceDemo() {
   const defaultVoice = content.voiceDemo.voices.find(v => v.default) || content.voiceDemo.voices[0];
   const [selectedVoice, setSelectedVoice] = useState(defaultVoice.id);
   const [text, setText] = useState(content.voiceDemo.defaultText);
-  const [status, setStatus] = useState<'idle' | 'playing' | 'preparing' | 'saved'>('idle');
+  const [status, setStatus] = useState<'idle' | 'playing' | 'loading' | 'saved' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handlePlay = async () => {
-    const audioPath = `/voices/${selectedVoice}.mp3`;
+    if (!text.trim()) {
+      setErrorMessage('נא להזין טקסט');
+      setStatus('error');
+      setTimeout(() => {
+        setStatus('idle');
+        setErrorMessage('');
+      }, 2000);
+      return;
+    }
+
+    setStatus('loading');
+    setErrorMessage('');
     
-    // Check if audio file exists
     try {
-      const response = await fetch(audioPath, { method: 'HEAD' });
-      if (!response.ok) {
-        setStatus('preparing');
-        setTimeout(() => setStatus('idle'), 2000);
-        return;
-      }
-      
+      // Stop current audio if playing
       if (audioRef.current) {
         audioRef.current.pause();
+        audioRef.current = null;
       }
+
+      // Call TTS API
+      const response = await fetch('/api/tts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          voice: selectedVoice,
+          text: text,
+          format: 'mp3',
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ error: 'שגיאה בשרת' }));
+        throw new Error(errorData.error || 'לא הצלחתי לנגן כרגע');
+      }
+
+      // Get audio blob
+      const blob = await response.blob();
+      const audioUrl = URL.createObjectURL(blob);
       
-      const audio = new Audio(audioPath);
+      // Create and play audio
+      const audio = new Audio(audioUrl);
       audioRef.current = audio;
       
       audio.onplay = () => setStatus('playing');
-      audio.onended = () => setStatus('idle');
+      audio.onended = () => {
+        setStatus('idle');
+        URL.revokeObjectURL(audioUrl);
+      };
       audio.onerror = () => {
-        setStatus('preparing');
-        setTimeout(() => setStatus('idle'), 2000);
+        setStatus('error');
+        setErrorMessage('לא הצלחתי לנגן כרגע');
+        setTimeout(() => {
+          setStatus('idle');
+          setErrorMessage('');
+        }, 3000);
+        URL.revokeObjectURL(audioUrl);
       };
       
-      audio.play();
-    } catch {
-      setStatus('preparing');
-      setTimeout(() => setStatus('idle'), 2000);
+      await audio.play();
+    } catch (error) {
+      console.error('Error playing audio:', error);
+      setStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'לא הצלחתי לנגן כרגע');
+      setTimeout(() => {
+        setStatus('idle');
+        setErrorMessage('');
+      }, 3000);
     }
   };
 
@@ -87,7 +129,7 @@ export default function VoiceDemo() {
                   value={selectedVoice}
                   onChange={(e) => setSelectedVoice(e.target.value)}
                   aria-label="בחירת קול לדוגמה"
-                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 pl-10 text-white focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent appearance-none cursor-pointer"
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 pl-10 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none cursor-pointer"
                 >
                   {content.voiceDemo.voices.map((voice) => (
                     <option key={voice.id} value={voice.id}>
@@ -115,7 +157,7 @@ export default function VoiceDemo() {
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 rows={4}
-                className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent resize-none"
+                className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                 placeholder={content.voiceDemo.defaultText}
               />
             </div>
@@ -124,23 +166,23 @@ export default function VoiceDemo() {
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={handlePlay}
-                disabled={status === 'playing'}
-                className="flex-1 bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 py-4 rounded-lg font-semibold hover:from-pink-600 hover:to-pink-700 transition disabled:opacity-50 disabled:cursor-not-allowed text-lg"
+                disabled={status === 'playing' || status === 'loading'}
+                className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed text-lg"
               >
-                {status === 'playing' ? content.voiceDemo.playing : content.voiceDemo.playButton}
+                {status === 'loading' ? 'טוען...' : status === 'playing' ? content.voiceDemo.playing : content.voiceDemo.playButton}
               </button>
               <button
                 onClick={handleSave}
-                className="flex-1 sm:flex-initial bg-gray-700 text-white px-6 py-4 rounded-lg font-semibold hover:bg-gray-600 transition"
+                className="flex-1 sm:flex-initial bg-white border-2 border-blue-500 text-blue-600 px-6 py-4 rounded-lg font-semibold hover:bg-blue-50 transition"
               >
                 {content.voiceDemo.saveButton}
               </button>
             </div>
 
             {/* Status Messages */}
-            {status === 'preparing' && (
-              <div className="text-center text-amber-400 text-sm animate-pulse">
-                {content.voiceDemo.preparing}
+            {status === 'error' && errorMessage && (
+              <div className="text-center text-red-400 text-sm">
+                {errorMessage}
               </div>
             )}
             {status === 'saved' && (

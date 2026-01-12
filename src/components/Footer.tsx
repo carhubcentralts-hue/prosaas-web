@@ -6,9 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-              {content.site.name}
-            </span>
+            <img src="/logo.svg" alt={content.site.name} className="h-10" />
           </div>
           
           <div className="flex items-center gap-6">

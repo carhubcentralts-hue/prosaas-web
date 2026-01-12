@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div>
+            <div>
             <Image src="/logo.svg" alt={content.site.name} width={120} height={40} />
           </div>
           

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import content from "../../content/site.he.json";
+import AccessibilityWidget from "../components/AccessibilityWidget";
 
 export const metadata: Metadata = {
   title: content.site.title,
@@ -28,6 +29,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         {children}
+        <AccessibilityWidget />
       </body>
     </html>
   );

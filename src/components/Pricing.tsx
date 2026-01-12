@@ -48,7 +48,7 @@ export default function Pricing() {
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-gray-600">{feature}</span>
@@ -63,6 +63,7 @@ export default function Pricing() {
                     ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:shadow-lg'
                     : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                 }`}
+                aria-label={`השאירו פרטים לחבילת ${plan.name}`}
               >
                 {content.pricing.cta}
               </a>

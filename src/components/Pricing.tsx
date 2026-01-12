@@ -69,6 +69,16 @@ export default function Pricing() {
             </div>
           ))}
         </div>
+
+        {/* Pricing Note and Customization */}
+        <div className="mt-12 text-center space-y-4">
+          <p className="text-gray-600 text-sm">
+            {content.pricing.note}
+          </p>
+          <p className="text-gray-700 font-medium">
+            {content.pricing.customization}
+          </p>
+        </div>
       </div>
     </section>
   );

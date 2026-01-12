@@ -48,10 +48,10 @@ export default function TermsPage() {
             <p className="text-gray-600">
               יש לך שאלות? צור קשר איתנו ב-{' '}
               <a 
-                href="mailto:hello@prosaas.io" 
+                href={`mailto:${content.contact.email.address}`}
                 className="text-blue-600 hover:text-blue-700 font-semibold"
               >
-                hello@prosaas.io
+                {content.contact.email.address}
               </a>
             </p>
           </div>

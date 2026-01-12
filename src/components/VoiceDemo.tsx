@@ -42,7 +42,7 @@ export default function VoiceDemo() {
         
         // Warn if audio is suspiciously short
         if (duration < 0.5) {
-          setErrorMessage('הדמו שקט/לא תקין - החלף קובץ MP3');
+          setErrorMessage(content.voiceDemo.invalidDemo);
         }
       };
       
@@ -69,7 +69,7 @@ export default function VoiceDemo() {
       
       // Check if it's a browser blocking issue
       if (error instanceof Error && error.name === 'NotAllowedError') {
-        setErrorMessage('הדפדפן חסם ניגון – נסה שוב / בדוק שהסאונד פעיל');
+        setErrorMessage(content.voiceDemo.browserBlocked);
       } else {
         setErrorMessage(content.voiceDemo.preparing);
       }

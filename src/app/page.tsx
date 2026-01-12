@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import WhatIs from '../components/WhatIs';
 import Features from '../components/Features';
 import VoiceDemo from '../components/VoiceDemo';
+import CallDemos from '../components/CallDemos';
 import Integrations from '../components/Integrations';
 import Pricing from '../components/Pricing';
 import FAQ from '../components/FAQ';
@@ -18,6 +19,7 @@ export default function Home() {
         <WhatIs />
         <Features />
         <VoiceDemo />
+        <CallDemos />
         <Integrations />
         <Pricing />
         <FAQ />

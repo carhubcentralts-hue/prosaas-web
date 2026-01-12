@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/validate-voice-mp3s.mjs",
+    "prebuild": "node scripts/validate-voice-mp3s.mjs && node scripts/validate-call-mp3s.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

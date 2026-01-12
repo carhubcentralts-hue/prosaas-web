@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import content from '../../content/site.he.json';
+import { ASSET_VERSION } from '../lib/assets';
 
 // Explicit mapping of voice IDs to MP3 files - NO dynamic construction
 const VOICE_FILES: Record<string, string> = {
@@ -54,7 +55,7 @@ export default function VoiceDemo() {
       }
 
       // Load static audio file from explicit mapping with cache busting
-      const audioUrl = src + "?v=5";
+      const audioUrl = `${src}?${ASSET_VERSION}`;
       const audio = new Audio(audioUrl);
       audioRef.current = audio;
       

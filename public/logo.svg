@@ -1,0 +1,12 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon: Stylized Phone/Bubble combination -->
+  <g>
+    <circle cx="25" cy="30" r="18" fill="#3B82F6" opacity="0.1"/>
+    <path d="M32 22C32 18.686 29.314 16 26 16H18C14.686 16 12 18.686 12 22V32C12 35.314 14.686 38 18 38H20L22 42L24 38H26C29.314 38 32 35.314 32 32V22Z" fill="#3B82F6"/>
+    <path d="M20 26C20 25.448 20.448 25 21 25H29C29.552 25 30 25.448 30 26C30 26.552 29.552 27 29 27H21C20.448 27 20 26.552 20 26Z" fill="white"/>
+    <path d="M20 30C20 29.448 20.448 29 21 29H27C27.552 29 28 29.448 28 30C28 30.552 27.552 31 27 31H21C20.448 31 20 30.552 20 30Z" fill="white"/>
+  </g>
+  
+  <!-- Text: ProSaaS -->
+  <text x="50" y="40" font-family="Heebo, Arial, sans-serif" font-size="28" font-weight="700" fill="#1E40AF">ProSaaS</text>
+</svg>

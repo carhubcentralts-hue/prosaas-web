@@ -68,7 +68,7 @@ export default function Features() {
               key={index} 
               className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition group"
             >
-              <div className="w-14 h-14 bg-gradient-to-r from-pink-100 to-purple-100 rounded-xl flex items-center justify-center mb-4 text-pink-500 group-hover:from-pink-500 group-hover:to-purple-600 group-hover:text-white transition">
+              <div className="w-14 h-14 bg-gradient-to-r from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-4 text-blue-600 group-hover:from-blue-500 group-hover:to-blue-600 group-hover:text-white transition">
                 {iconMap[feature.icon] || iconMap.users}
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">

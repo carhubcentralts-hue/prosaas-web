@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/validate-voice-mp3s.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate-voices": "node scripts/generate-voice-demos.mjs"
   },
   "dependencies": {
     "next": "16.1.1",

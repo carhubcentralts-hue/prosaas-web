@@ -29,6 +29,7 @@ export default function VoiceDemo() {
       // Stop current audio if playing
       if (audioRef.current) {
         audioRef.current.pause();
+        audioRef.current.currentTime = 0;
         audioRef.current = null;
       }
 

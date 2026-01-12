@@ -16,9 +16,12 @@ const ALLOWED_VOICES = [
 
 type AllowedVoice = typeof ALLOWED_VOICES[number];
 
+// Cache configuration
+const CACHE_TTL = 60 * 1000; // 60 seconds
+const MAX_CACHE_SIZE = 100;
+
 // Simple in-memory cache for TTS results
 const ttsCache = new Map<string, { audio: ArrayBuffer; timestamp: number }>();
-const CACHE_TTL = 60 * 1000; // 60 seconds
 
 export async function POST(request: NextRequest) {
   try {
@@ -44,6 +47,14 @@ export async function POST(request: NextRequest) {
     if (text.length > 400) {
       return NextResponse.json(
         { error: 'הטקסט ארוך מדי. מקסימום 400 תווים.' },
+        { status: 400 }
+      );
+    }
+
+    // Validate format
+    if (format && format !== 'mp3') {
+      return NextResponse.json(
+        { error: 'פורמט לא נתמך. רק MP3 נתמך.' },
         { status: 400 }
       );
     }
@@ -90,7 +101,7 @@ export async function POST(request: NextRequest) {
     ttsCache.set(cacheKey, { audio: arrayBuffer, timestamp: Date.now() });
 
     // Clean old cache entries (basic cleanup)
-    if (ttsCache.size > 100) {
+    if (ttsCache.size > MAX_CACHE_SIZE) {
       const now = Date.now();
       for (const [key, value] of ttsCache.entries()) {
         if (now - value.timestamp > CACHE_TTL) {

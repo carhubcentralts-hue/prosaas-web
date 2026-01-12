@@ -25,21 +25,38 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollToSection('features')} className="text-gray-700 hover:text-blue-600 transition">
+            <button 
+              onClick={() => scrollToSection('features')} 
+              className="text-gray-700 hover:text-blue-600 transition"
+              aria-label="מעבר לסעיף יכולות"
+            >
               {content.nav.features}
             </button>
-            <button onClick={() => scrollToSection('voice-demo')} className="text-gray-700 hover:text-blue-600 transition">
+            <button 
+              onClick={() => scrollToSection('voice-demo')} 
+              className="text-gray-700 hover:text-blue-600 transition"
+              aria-label="מעבר לסעיף הדגמת קול"
+            >
               {content.nav.voiceDemo}
             </button>
-            <button onClick={() => scrollToSection('pricing')} className="text-gray-700 hover:text-blue-600 transition">
+            <button 
+              onClick={() => scrollToSection('pricing')} 
+              className="text-gray-700 hover:text-blue-600 transition"
+              aria-label="מעבר לסעיף מחירים"
+            >
               {content.nav.pricing}
             </button>
-            <button onClick={() => scrollToSection('faq')} className="text-gray-700 hover:text-blue-600 transition">
+            <button 
+              onClick={() => scrollToSection('faq')} 
+              className="text-gray-700 hover:text-blue-600 transition"
+              aria-label="מעבר לסעיף שאלות נפוצות"
+            >
               {content.nav.faq}
             </button>
             <button 
               onClick={() => scrollToSection('contact')} 
               className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition"
+              aria-label="מעבר לטופס יצירת קשר"
             >
               {content.nav.contact}
             </button>
@@ -49,6 +66,8 @@ export default function Navbar() {
           <button 
             className="md:hidden p-2"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'סגור תפריט' : 'פתח תפריט'}
+            aria-expanded={isOpen}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isOpen ? (
@@ -62,23 +81,40 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pb-4">
+          <div className="md:hidden pb-4" role="navigation" aria-label="תפריט ניווט נייד">
             <div className="flex flex-col space-y-3">
-              <button onClick={() => scrollToSection('features')} className="text-gray-700 hover:text-blue-600 transition py-2">
+              <button 
+                onClick={() => scrollToSection('features')} 
+                className="text-gray-700 hover:text-blue-600 transition py-2"
+                aria-label="מעבר לסעיף יכולות"
+              >
                 {content.nav.features}
               </button>
-              <button onClick={() => scrollToSection('voice-demo')} className="text-gray-700 hover:text-blue-600 transition py-2">
+              <button 
+                onClick={() => scrollToSection('voice-demo')} 
+                className="text-gray-700 hover:text-blue-600 transition py-2"
+                aria-label="מעבר לסעיף הדגמת קול"
+              >
                 {content.nav.voiceDemo}
               </button>
-              <button onClick={() => scrollToSection('pricing')} className="text-gray-700 hover:text-blue-600 transition py-2">
+              <button 
+                onClick={() => scrollToSection('pricing')} 
+                className="text-gray-700 hover:text-blue-600 transition py-2"
+                aria-label="מעבר לסעיף מחירים"
+              >
                 {content.nav.pricing}
               </button>
-              <button onClick={() => scrollToSection('faq')} className="text-gray-700 hover:text-blue-600 transition py-2">
+              <button 
+                onClick={() => scrollToSection('faq')} 
+                className="text-gray-700 hover:text-blue-600 transition py-2"
+                aria-label="מעבר לסעיף שאלות נפוצות"
+              >
                 {content.nav.faq}
               </button>
               <button 
                 onClick={() => scrollToSection('contact')} 
                 className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-full"
+                aria-label="מעבר לטופס יצירת קשר"
               >
                 {content.nav.contact}
               </button>

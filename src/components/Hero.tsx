@@ -24,12 +24,14 @@ export default function Hero() {
           <a 
             href="#contact" 
             className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition transform hover:scale-105"
+            aria-label="מעבר לטופס יצירת קשר"
           >
             {content.hero.cta}
           </a>
           <a 
             href="#voice-demo" 
             className="border-2 border-blue-500 text-blue-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-50 transition"
+            aria-label="מעבר לסעיף הדגמת קול"
           >
             {content.hero.ctaSecondary}
           </a>

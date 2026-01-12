@@ -1,0 +1,215 @@
+{
+  "site": {
+    "name": "ProSaaS",
+    "title": "ProSaaS - מערכת CRM מתקדמת עם בוט WhatsApp ובוט שיחות",
+    "description": "מערכת CRM חכמה עם בוט WhatsApp ובוט שיחות בזמן אמת. נהלו לקוחות, אוטומציות ושיחות במקום אחד.",
+    "keywords": "CRM, WhatsApp Bot, Voice Bot, ניהול לקוחות, אוטומציה"
+  },
+  "nav": {
+    "features": "יכולות",
+    "voiceDemo": "הדגמת קול",
+    "pricing": "מחירים",
+    "faq": "שאלות נפוצות",
+    "contact": "צור קשר"
+  },
+  "hero": {
+    "title": "הכירו את העתיד של ניהול העסק שלכם",
+    "subtitle": "מערכת CRM מתקדמת משולבת עם בוט WhatsApp חכם ובוט שיחות בזמן אמת",
+    "description": "ProSaaS מאחדת את כל הכלים שאתם צריכים: ניהול לקוחות, אוטומציות, תקשורת רב-ערוצית ובינה מלאכותית - הכל במקום אחד.",
+    "cta": "התחילו עכשיו",
+    "ctaSecondary": "צפו בהדגמה"
+  },
+  "whatIs": {
+    "title": "מה זה ProSaaS?",
+    "description": "ProSaaS היא פלטפורמה מתקדמת לניהול עסקים המשלבת CRM חכם, בוט WhatsApp אוטומטי ומערכת שיחות בזמן אמת מבוססת AI. עם ProSaaS, תוכלו לנהל את כל התקשורת עם הלקוחות שלכם ממקום אחד, לאטומט תהליכים ולהגדיל את היעילות העסקית.",
+    "highlights": [
+      "CRM מלא עם ניהול לידים ופייפליין מכירות",
+      "בוט WhatsApp חכם עם מענה אוטומטי 24/7",
+      "שיחות קוליות אוטומטיות עם תמלול בזמן אמת",
+      "אינטגרציות עם מגוון מערכות"
+    ]
+  },
+  "features": {
+    "title": "יכולות המערכת",
+    "subtitle": "כל מה שצריך לניהול עסק חכם",
+    "items": [
+      {
+        "title": "CRM / ניהול לקוחות ולידים",
+        "description": "נהלו את כל הלקוחות והלידים שלכם במקום אחד. צפו בהיסטוריה מלאה, הוסיפו הערות ועקבו אחרי כל אינטראקציה.",
+        "icon": "users"
+      },
+      {
+        "title": "ניהול סטטוסים וצינור מכירה",
+        "description": "Pipeline מכירות ויזואלי עם סטטוסים מותאמים אישית. גררו לידים בין שלבים ועקבו אחרי ההתקדמות.",
+        "icon": "pipeline"
+      },
+      {
+        "title": "משימות ותיעוד פנימי",
+        "description": "הקצו משימות לצוות, הגדירו תאריכי יעד ותעדו כל פעילות. שמרו על כולם מסונכרנים.",
+        "icon": "tasks"
+      },
+      {
+        "title": "WhatsApp Bot אוטומטי",
+        "description": "בוט חכם שעונה ללקוחות 24/7, מנתב לנציג בצורך, שולח תבניות ומתייג שיחות אוטומטית.",
+        "icon": "whatsapp"
+      },
+      {
+        "title": "שיחות בזמן אמת עם AI",
+        "description": "מענה טלפוני אוטומטי עם בינה מלאכותית. תמלול בזמן אמת וסיכום שיחה אוטומטי.",
+        "icon": "phone"
+      },
+      {
+        "title": "הפצת הודעות",
+        "description": "שלחו קמפיינים ב-WhatsApp ואימייל לקבוצות ממוקדות. עקבו אחרי פתיחות ותגובות.",
+        "icon": "broadcast"
+      },
+      {
+        "title": "ניהול יומן ותיאומים",
+        "description": "תאמו פגישות בקלות, שלחו תזכורות אוטומטיות וסנכרנו עם יומן Google.",
+        "icon": "calendar"
+      },
+      {
+        "title": "דשבורדים וסטטיסטיקות",
+        "description": "צפו בנתונים בזמן אמת: לידים חדשים, שיחות, המרות ועוד. קבלו החלטות מבוססות נתונים.",
+        "icon": "chart"
+      },
+      {
+        "title": "אינטגרציות ו-Webhooks",
+        "description": "חברו ל-n8n, Zapier, ומאות מערכות אחרות. API מלא לפיתוח מותאם אישית.",
+        "icon": "integration"
+      }
+    ]
+  },
+  "voiceDemo": {
+    "title": "בחירת קול 🎤",
+    "subtitle": "שמעו איך נשמע הבוט שלנו עם קולות שונים",
+    "textLabel": "טקסט לדוגמה",
+    "defaultText": "שלום, אני העוזר הדיגיטלי שלכם. אני כאן כדי לעזור לכם בכל שאלה.",
+    "playButton": "שמע דוגמה ▶️",
+    "saveButton": "שמור",
+    "preparing": "דמו בהכנה",
+    "playing": "מנגן...",
+    "saved": "נשמר בהצלחה!",
+    "voices": [
+      { "id": "alloy", "name": "Alloy", "description": "Neutral, balanced" },
+      { "id": "ash", "name": "Ash", "description": "Male, clear" },
+      { "id": "ballad", "name": "Ballad", "description": "Male, warm" },
+      { "id": "coral", "name": "Coral", "description": "Female, warm" },
+      { "id": "echo", "name": "Echo", "description": "Male, resonant", "default": true },
+      { "id": "sage", "name": "Sage", "description": "Female, wise" },
+      { "id": "shimmer", "name": "Shimmer", "description": "Female, soft" },
+      { "id": "verse", "name": "Verse", "description": "Male, dynamic" },
+      { "id": "marin", "name": "Marin", "description": "Female, calm" }
+    ]
+  },
+  "integrations": {
+    "title": "אינטגרציות",
+    "subtitle": "מתחברים לכל המערכות שאתם מכירים",
+    "items": [
+      { "name": "Twilio", "description": "שיחות ו-SMS" },
+      { "name": "WhatsApp", "description": "תקשורת ישירה" },
+      { "name": "n8n", "description": "אוטומציות מתקדמות" },
+      { "name": "Email", "description": "קמפיינים ותזכורות" }
+    ]
+  },
+  "pricing": {
+    "title": "מחירים",
+    "subtitle": "בחרו את התוכנית המתאימה לכם",
+    "monthly": "לחודש",
+    "popular": "הכי פופולרי",
+    "cta": "התחילו עכשיו",
+    "plans": [
+      {
+        "name": "בסיסי",
+        "price": "199",
+        "description": "לעסקים קטנים שרוצים להתחיל",
+        "features": [
+          "עד 500 לידים",
+          "בוט WhatsApp בסיסי",
+          "3 משתמשים",
+          "תמיכה במייל"
+        ]
+      },
+      {
+        "name": "מקצועי",
+        "price": "499",
+        "description": "לעסקים צומחים",
+        "popular": true,
+        "features": [
+          "עד 5,000 לידים",
+          "בוט WhatsApp מתקדם",
+          "שיחות AI (100 דקות)",
+          "10 משתמשים",
+          "אינטגרציות",
+          "תמיכה מועדפת"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "price": "צרו קשר",
+        "description": "לארגונים גדולים",
+        "features": [
+          "לידים ללא הגבלה",
+          "כל היכולות",
+          "שיחות AI ללא הגבלה",
+          "משתמשים ללא הגבלה",
+          "SLA מובטח",
+          "מנהל לקוח ייעודי"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "title": "שאלות נפוצות",
+    "items": [
+      {
+        "question": "כמה זמן לוקח להטמיע את המערכת?",
+        "answer": "ההטמעה הבסיסית לוקחת כ-24 שעות. הצוות שלנו מלווה אתכם לאורך כל הדרך ומוודא שהכל עובד כמו שצריך."
+      },
+      {
+        "question": "האם צריך ידע טכני להשתמש במערכת?",
+        "answer": "לא! המערכת נבנתה להיות פשוטה וידידותית. כל אחד יכול להשתמש בה ללא ידע טכני מוקדם."
+      },
+      {
+        "question": "איך עובד בוט ה-WhatsApp?",
+        "answer": "הבוט מחובר למספר העסקי שלכם ועונה אוטומטית ללקוחות לפי תרחישים שתגדירו. הוא יכול לענות על שאלות, לקבוע פגישות ולהעביר לנציג בצורך."
+      },
+      {
+        "question": "מה קורה אם אני צריך עזרה?",
+        "answer": "צוות התמיכה שלנו זמין בצ'אט, טלפון ומייל. בתוכניות המקצועיות יש גם תמיכה בוואטסאפ."
+      },
+      {
+        "question": "האם אפשר לבטל בכל עת?",
+        "answer": "בהחלט. אין התחייבות והחשבון שלכם מתבטל מיידית. כל הנתונים שלכם זמינים לייצוא."
+      }
+    ]
+  },
+  "contact": {
+    "title": "צרו קשר",
+    "subtitle": "רוצים לשמוע עוד? השאירו פרטים ונחזור אליכם",
+    "form": {
+      "name": "שם מלא",
+      "phone": "טלפון",
+      "business": "שם העסק",
+      "message": "הודעה",
+      "submit": "שלח",
+      "success": "הפנייה נשלחה בהצלחה! ניצור קשר בהקדם.",
+      "error": "שגיאה בשליחה, נסו שוב."
+    },
+    "whatsapp": {
+      "text": "דברו איתנו בוואטסאפ",
+      "url": "https://wa.me/972501234567?text=היי, אשמח לשמוע עוד על ProSaaS"
+    },
+    "email": {
+      "text": "שלחו מייל",
+      "address": "hello@prosaas.io"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 ProSaaS. כל הזכויות שמורות.",
+    "links": [
+      { "text": "תנאי שימוש", "url": "/terms" },
+      { "text": "מדיניות פרטיות", "url": "/privacy" }
+    ]
+  }
+}

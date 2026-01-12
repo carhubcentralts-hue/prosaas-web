@@ -9,11 +9,13 @@ export default function VoiceDemo() {
   const [text, setText] = useState(content.voiceDemo.defaultText);
   const [status, setStatus] = useState<'idle' | 'playing' | 'loading' | 'saved' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string>('');
+  const [audioDuration, setAudioDuration] = useState<number | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handlePlay = async () => {
     setStatus('loading');
     setErrorMessage('');
+    setAudioDuration(null);
     
     try {
       // Stop current audio if playing
@@ -24,10 +26,25 @@ export default function VoiceDemo() {
         audioRef.current = null;
       }
 
-      // Try to load static audio file from /voices directory
-      const audioUrl = `/voices/${selectedVoice}.mp3`;
+      // Load static audio file from /voices directory with cache busting
+      const audioUrl = `/voices/${selectedVoice}.mp3?v=2`;
       const audio = new Audio(audioUrl);
       audioRef.current = audio;
+      
+      // Reset audio settings to ensure playback
+      audio.muted = false;
+      audio.volume = 1.0;
+      
+      // Handle metadata loaded - show duration and validate
+      audio.onloadedmetadata = () => {
+        const duration = audio.duration;
+        setAudioDuration(duration);
+        
+        // Warn if audio is suspiciously short
+        if (duration < 0.5) {
+          setErrorMessage(content.voiceDemo.invalidDemo);
+        }
+      };
       
       audio.onplay = () => setStatus('playing');
       audio.onended = () => {
@@ -43,12 +60,20 @@ export default function VoiceDemo() {
         }, 3000);
       };
       
-      // Try to play the audio
+      // Load and play the audio
+      audio.load();
       await audio.play();
     } catch (error) {
-      // If audio file doesn't exist or can't play, show preparing message
+      // Handle browser autoplay blocking or other errors
       setStatus('error');
-      setErrorMessage(content.voiceDemo.preparing);
+      
+      // Check if it's a browser blocking issue
+      if (error instanceof Error && error.name === 'NotAllowedError') {
+        setErrorMessage(content.voiceDemo.browserBlocked);
+      } else {
+        setErrorMessage(content.voiceDemo.preparing);
+      }
+      
       setTimeout(() => {
         setStatus('idle');
         setErrorMessage('');
@@ -153,6 +178,11 @@ export default function VoiceDemo() {
             </div>
 
             {/* Status Messages */}
+            {audioDuration !== null && status !== 'error' && (
+              <div className="text-center text-blue-300 text-sm">
+                אורך הדמו: {audioDuration.toFixed(1)} שניות
+              </div>
+            )}
             {status === 'error' && errorMessage && (
               <div className="text-center text-red-400 text-sm">
                 {errorMessage}

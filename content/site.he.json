@@ -90,6 +90,8 @@
     "preparing": "דמו בהכנה",
     "playing": "מנגן...",
     "saved": "נשמר בהצלחה!",
+    "browserBlocked": "הדפדפן חסם ניגון – נסה שוב / בדוק שהסאונד פעיל",
+    "invalidDemo": "הדמו שקט/לא תקין - החלף קובץ MP3",
     "voices": [
       { "id": "alloy", "name": "Alloy", "description": "Neutral, balanced" },
       { "id": "ash", "name": "Ash", "description": "Male, clear" },

@@ -63,12 +63,12 @@ export default function VoiceDemo() {
       // Load and play the audio
       audio.load();
       await audio.play();
-    } catch (error: any) {
+    } catch (error) {
       // Handle browser autoplay blocking or other errors
       setStatus('error');
       
       // Check if it's a browser blocking issue
-      if (error.name === 'NotAllowedError') {
+      if (error instanceof Error && error.name === 'NotAllowedError') {
         setErrorMessage('הדפדפן חסם ניגון – נסה שוב / בדוק שהסאונד פעיל');
       } else {
         setErrorMessage(content.voiceDemo.preparing);

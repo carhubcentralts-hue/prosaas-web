@@ -27,7 +27,7 @@ export default function VoiceDemo() {
       }
 
       // Load static audio file from /voices directory with cache busting
-      const audioUrl = `/voices/${selectedVoice}.mp3?v=2`;
+      const audioUrl = `/voices/${selectedVoice}.mp3?v=3`;
       const audio = new Audio(audioUrl);
       audioRef.current = audio;
       

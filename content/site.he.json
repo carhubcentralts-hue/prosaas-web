@@ -87,7 +87,7 @@
     "defaultText": "היי, זאת הנציגה הדיגיטלית של פרו־סאס. תרצו אותי גם אצלכם בעסק?",
     "playButton": "שמע דוגמה ▶️",
     "preparing": "דמו לא זמין עדיין",
-    "playing": "מנגן...",
+    "playing": "מנגן הקלטה",
     "browserBlocked": "הדפדפן חסם ניגון – נסה שוב / בדוק שהסאונד פעיל",
     "voices": [
       { "id": "alloy", "name": "Alloy", "description": "Neutral, balanced" },

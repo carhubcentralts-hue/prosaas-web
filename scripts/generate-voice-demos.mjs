@@ -4,8 +4,10 @@
  * 
  * This script creates all 9 voice demo files with the same Hebrew text.
  * Run with: OPENAI_API_KEY=sk-... node scripts/generate-voice-demos.mjs
+ * Or create a .env file with OPENAI_API_KEY=sk-...
  */
 
+import 'dotenv/config';
 import OpenAI from 'openai';
 import fs from 'fs';
 import path from 'path';
@@ -61,6 +63,7 @@ async function main() {
   if (!apiKey) {
     console.error('❌ Error: OPENAI_API_KEY environment variable is not set');
     console.error('Usage: OPENAI_API_KEY=sk-... node scripts/generate-voice-demos.mjs');
+    console.error('Or create a .env file with: OPENAI_API_KEY=sk-...');
     process.exit(1);
   }
 

@@ -24,6 +24,8 @@ export default function FAQ() {
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full flex items-center justify-between p-6 text-right"
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
               >
                 <span className="font-semibold text-gray-900">{item.question}</span>
                 <svg 
@@ -31,12 +33,13 @@ export default function FAQ() {
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-6">
+                <div className="px-6 pb-6" id={`faq-answer-${index}`} role="region">
                   <p className="text-gray-600 leading-relaxed">{item.answer}</p>
                 </div>
               )}

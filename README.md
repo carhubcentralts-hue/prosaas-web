@@ -4,7 +4,7 @@
 
 ## 🚀 טכנולוגיות
 
-- **Next.js 14** (App Router)
+- **Next.js 16** (App Router)
 - **TypeScript**
 - **TailwindCSS**
 - **RTL מלא** - עברית מימין לשמאל

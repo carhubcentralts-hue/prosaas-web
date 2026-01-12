@@ -6,16 +6,13 @@ import content from '../../content/site.he.json';
 export default function VoiceDemo() {
   const defaultVoice = content.voiceDemo.voices.find(v => v.default) || content.voiceDemo.voices[0];
   const [selectedVoice, setSelectedVoice] = useState(defaultVoice.id);
-  const [text, setText] = useState(content.voiceDemo.defaultText);
-  const [status, setStatus] = useState<'idle' | 'playing' | 'loading' | 'saved' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'playing' | 'loading' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string>('');
-  const [audioDuration, setAudioDuration] = useState<number | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handlePlay = async () => {
     setStatus('loading');
     setErrorMessage('');
-    setAudioDuration(null);
     
     try {
       // Stop current audio if playing
@@ -27,7 +24,7 @@ export default function VoiceDemo() {
       }
 
       // Load static audio file from /voices directory with cache busting
-      const audioUrl = `/voices/${selectedVoice}.mp3?v=3`;
+      const audioUrl = `/voices/${selectedVoice}.mp3?v=4`;
       const audio = new Audio(audioUrl);
       audioRef.current = audio;
       
@@ -35,23 +32,12 @@ export default function VoiceDemo() {
       audio.muted = false;
       audio.volume = 1.0;
       
-      // Handle metadata loaded - show duration and validate
-      audio.onloadedmetadata = () => {
-        const duration = audio.duration;
-        setAudioDuration(duration);
-        
-        // Warn if audio is suspiciously short
-        if (duration < 0.5) {
-          setErrorMessage(content.voiceDemo.invalidDemo);
-        }
-      };
-      
       audio.onplay = () => setStatus('playing');
       audio.onended = () => {
         setStatus('idle');
       };
       audio.onerror = () => {
-        // If file doesn't exist (404), show "preparing" message
+        // If file doesn't exist (404), show "not available yet" message
         setStatus('error');
         setErrorMessage(content.voiceDemo.preparing);
         setTimeout(() => {
@@ -79,16 +65,6 @@ export default function VoiceDemo() {
         setErrorMessage('');
       }, 3000);
     }
-  };
-
-  const handleSave = () => {
-    // Simulate local save
-    localStorage.setItem('prosaas-voice-settings', JSON.stringify({
-      voice: selectedVoice,
-      text: text
-    }));
-    setStatus('saved');
-    setTimeout(() => setStatus('idle'), 2000);
   };
 
   // Cleanup audio on unmount
@@ -146,51 +122,21 @@ export default function VoiceDemo() {
               </div>
             </div>
 
-            {/* Text Area */}
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
-                {content.voiceDemo.textLabel}
-              </label>
-              <textarea
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                rows={4}
-                className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                placeholder={content.voiceDemo.defaultText}
-              />
-            </div>
-
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* Play Button */}
+            <div className="flex justify-center">
               <button
                 onClick={handlePlay}
                 disabled={status === 'playing' || status === 'loading'}
-                className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed text-lg"
+                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed text-lg"
               >
                 {status === 'loading' ? 'טוען...' : status === 'playing' ? content.voiceDemo.playing : content.voiceDemo.playButton}
-              </button>
-              <button
-                onClick={handleSave}
-                className="flex-1 sm:flex-initial bg-white border-2 border-blue-500 text-blue-600 px-6 py-4 rounded-lg font-semibold hover:bg-blue-50 transition"
-              >
-                {content.voiceDemo.saveButton}
               </button>
             </div>
 
             {/* Status Messages */}
-            {audioDuration !== null && status !== 'error' && (
-              <div className="text-center text-blue-300 text-sm">
-                אורך הדמו: {audioDuration.toFixed(1)} שניות
-              </div>
-            )}
             {status === 'error' && errorMessage && (
               <div className="text-center text-red-400 text-sm">
                 {errorMessage}
-              </div>
-            )}
-            {status === 'saved' && (
-              <div className="text-center text-green-400 text-sm">
-                {content.voiceDemo.saved}
               </div>
             )}
           </div>

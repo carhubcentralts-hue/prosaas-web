@@ -17,7 +17,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Hebrew text for all demos
-const DEMO_TEXT = 'שלום, אני העוזר הדיגיטלי של ProSaaS. אני כאן כדי לעזור לכם בכל שאלה.';
+const DEMO_TEXT = 'היי, זאת הנציגה הדיגיטלית של פרו־סאס. תרצו אותי גם אצלכם בעסק?';
 
 // All available voices
 const VOICES = [

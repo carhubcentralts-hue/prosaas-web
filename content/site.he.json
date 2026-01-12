@@ -83,15 +83,11 @@
   "voiceDemo": {
     "title": "בחירת קול 🎤",
     "subtitle": "שמעו איך נשמע הבוט שלנו עם קולות שונים",
-    "textLabel": "טקסט לדוגמה",
-    "defaultText": "שלום, אני העוזר הדיגיטלי שלכם. אני כאן כדי לעזור לכם בכל שאלה.",
+    "defaultText": "היי, זאת הנציגה הדיגיטלית של פרו־סאס. תרצו אותי גם אצלכם בעסק?",
     "playButton": "שמע דוגמה ▶️",
-    "saveButton": "שמור",
-    "preparing": "דמו בהכנה",
+    "preparing": "דמו לא זמין עדיין",
     "playing": "מנגן...",
-    "saved": "נשמר בהצלחה!",
     "browserBlocked": "הדפדפן חסם ניגון – נסה שוב / בדוק שהסאונד פעיל",
-    "invalidDemo": "הדמו שקט/לא תקין - החלף קובץ MP3",
     "voices": [
       { "id": "alloy", "name": "Alloy", "description": "Neutral, balanced" },
       { "id": "ash", "name": "Ash", "description": "Male, clear" },

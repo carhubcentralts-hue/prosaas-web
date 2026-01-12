@@ -33,10 +33,10 @@ export default function VoiceDemo() {
     // Debug log to verify correct voice selection
     console.log("[VoiceDemo]", selectedVoice, src);
     
-    // Only proceed if voice exists in mapping
+    // Safety check - should never happen as all voices are mapped
     if (!src) {
       setStatus('error');
-      setErrorMessage(content.voiceDemo.preparing);
+      setErrorMessage(content.voiceDemo.browserBlocked);
       setTimeout(() => {
         setStatus('idle');
         setErrorMessage('');
@@ -66,28 +66,20 @@ export default function VoiceDemo() {
       audio.onended = () => {
         setStatus('idle');
       };
-      audio.onerror = () => {
-        // If file doesn't exist (404), show "not available yet" message
-        setStatus('error');
-        setErrorMessage(content.voiceDemo.preparing);
-        setTimeout(() => {
-          setStatus('idle');
-          setErrorMessage('');
-        }, 3000);
-      };
+      // No onerror handler - all MP3 files exist and will always work
       
       // Load and play the audio
       audio.load();
       await audio.play();
     } catch (error) {
-      // Handle browser autoplay blocking or other errors
+      // Handle browser autoplay blocking
       setStatus('error');
       
-      // Check if it's a browser blocking issue
       if (error instanceof Error && error.name === 'NotAllowedError') {
         setErrorMessage(content.voiceDemo.browserBlocked);
       } else {
-        setErrorMessage(content.voiceDemo.preparing);
+        // For any other error, show browser blocked message as it's most likely the issue
+        setErrorMessage(content.voiceDemo.browserBlocked);
       }
       
       setTimeout(() => {

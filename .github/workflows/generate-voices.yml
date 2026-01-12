@@ -1,0 +1,65 @@
+name: Generate Voice Demos
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate-voices:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Generate voice demos
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: npm run generate-voices
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git add public/voices/*.mp3
+          if git diff --staged --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes to commit"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push generated files
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Try to push directly to main
+          if git commit -m "Generate voice demo MP3 files" && git push; then
+            echo "Successfully pushed to main branch"
+          else
+            # If push to main fails (branch protection), create a new branch and PR
+            BRANCH_NAME="generated-voices-$(date +%Y%m%d-%H%M%S)"
+            git checkout -b "$BRANCH_NAME"
+            git push -u origin "$BRANCH_NAME"
+            
+            # Create PR using GitHub CLI
+            gh pr create \
+              --title "Generate voice demo MP3 files" \
+              --body "Automated generation of Hebrew voice demos using OpenAI TTS API" \
+              --base main \
+              --head "$BRANCH_NAME"
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}

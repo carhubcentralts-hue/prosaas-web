@@ -35,7 +35,13 @@ The following has been implemented:
 ```bash
 # 1. Get your OpenAI API key from https://platform.openai.com/api-keys
 
-# 2. Set the environment variable
+# 2. Set the environment variable (choose one method):
+
+# Method A: Using .env file (recommended)
+cp .env.example .env
+# Edit .env and add your key: OPENAI_API_KEY=sk-your-api-key-here
+
+# Method B: Export to shell
 export OPENAI_API_KEY=sk-your-api-key-here
 
 # 3. Run the generation script

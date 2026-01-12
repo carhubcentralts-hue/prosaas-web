@@ -60,7 +60,7 @@ async function main() {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
     console.error('❌ Error: OPENAI_API_KEY environment variable is not set');
-    console.error('Usage: OPENAI_API_KEY=sk-... node scripts/generate-voice-demons.mjs');
+    console.error('Usage: OPENAI_API_KEY=sk-... node scripts/generate-voice-demos.mjs');
     process.exit(1);
   }
 

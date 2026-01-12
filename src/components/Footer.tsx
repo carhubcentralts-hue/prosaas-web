@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import content from '../../content/site.he.json';
 
 export default function Footer() {
@@ -6,7 +7,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
-            <img src="/logo.svg" alt={content.site.name} className="h-10" />
+            <Image src="/logo.svg" alt={content.site.name} width={120} height={40} />
           </div>
           
           <div className="flex items-center gap-6">

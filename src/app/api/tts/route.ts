@@ -17,7 +17,7 @@ const ALLOWED_VOICES = [
 type AllowedVoice = typeof ALLOWED_VOICES[number];
 
 // Simple in-memory cache for TTS results
-const ttsCache = new Map<string, { audio: Buffer; timestamp: number }>();
+const ttsCache = new Map<string, { audio: ArrayBuffer; timestamp: number }>();
 const CACHE_TTL = 60 * 1000; // 60 seconds
 
 export async function POST(request: NextRequest) {
@@ -85,10 +85,9 @@ export async function POST(request: NextRequest) {
 
     // Convert response to buffer
     const arrayBuffer = await response.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
 
     // Cache the result
-    ttsCache.set(cacheKey, { audio: buffer, timestamp: Date.now() });
+    ttsCache.set(cacheKey, { audio: arrayBuffer, timestamp: Date.now() });
 
     // Clean old cache entries (basic cleanup)
     if (ttsCache.size > 100) {
@@ -100,7 +99,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    return new NextResponse(buffer, {
+    return new NextResponse(arrayBuffer, {
       status: 200,
       headers: {
         'Content-Type': 'audio/mpeg',

@@ -20,6 +20,7 @@ export default function VoiceDemo() {
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;
+        audioRef.current.src = ''; // Release the audio resource
         audioRef.current = null;
       }
 
@@ -70,6 +71,8 @@ export default function VoiceDemo() {
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
+        audioRef.current.src = ''; // Release the audio resource
+        audioRef.current = null;
       }
     };
   }, []);

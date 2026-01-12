@@ -3,6 +3,19 @@
 import { useState, useRef, useEffect } from 'react';
 import content from '../../content/site.he.json';
 
+// Explicit mapping of voice IDs to MP3 files - NO dynamic construction
+const VOICE_FILES: Record<string, string> = {
+  alloy: "/voices/alloy.mp3",
+  ash: "/voices/ash.mp3",
+  ballad: "/voices/ballad.mp3",
+  coral: "/voices/coral.mp3",
+  echo: "/voices/echo.mp3",
+  marin: "/voices/marin.mp3",
+  sage: "/voices/sage.mp3",
+  shimmer: "/voices/shimmer.mp3",
+  verse: "/voices/verse.mp3",
+};
+
 export default function VoiceDemo() {
   const defaultVoice = content.voiceDemo.voices.find(v => v.default) || content.voiceDemo.voices[0];
   const [selectedVoice, setSelectedVoice] = useState(defaultVoice.id);
@@ -14,6 +27,23 @@ export default function VoiceDemo() {
     setStatus('loading');
     setErrorMessage('');
     
+    // Get the mapped file path
+    const src = VOICE_FILES[selectedVoice];
+    
+    // Debug log to verify correct voice selection
+    console.log("[VoiceDemo]", selectedVoice, src);
+    
+    // Only proceed if voice exists in mapping
+    if (!src) {
+      setStatus('error');
+      setErrorMessage(content.voiceDemo.preparing);
+      setTimeout(() => {
+        setStatus('idle');
+        setErrorMessage('');
+      }, 3000);
+      return;
+    }
+    
     try {
       // Stop current audio if playing
       if (audioRef.current) {
@@ -23,8 +53,8 @@ export default function VoiceDemo() {
         audioRef.current = null;
       }
 
-      // Load static audio file from /voices directory with cache busting
-      const audioUrl = `/voices/${selectedVoice}.mp3?v=4`;
+      // Load static audio file from explicit mapping with cache busting
+      const audioUrl = src + "?v=5";
       const audio = new Audio(audioUrl);
       audioRef.current = audio;
       

@@ -25,7 +25,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8 space-x-reverse">
+          <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection('features')} className="text-gray-700 hover:text-pink-500 transition">
               {content.nav.features}
             </button>

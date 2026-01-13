@@ -161,7 +161,7 @@ export default function CallDemos() {
                   {/* Call Header */}
                   <div className="mb-4">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{call.title}</h3>
-                    <p className="text-gray-600 text-sm">{call.description}</p>
+                    <p className="text-gray-600 text-sm line-clamp-2">{call.description}</p>
                   </div>
 
                   {/* Tags */}

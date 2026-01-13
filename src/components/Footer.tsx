@@ -11,7 +11,7 @@ export default function Footer() {
             <Image src="/logo.svg" alt={content.site.name} width={120} height={40} />
           </div>
           
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             {content.footer.links.map((link, index) => (
               <Link 
                 key={index}

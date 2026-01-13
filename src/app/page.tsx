@@ -5,7 +5,6 @@ import Features from '../components/Features';
 import VoiceDemo from '../components/VoiceDemo';
 import CallDemos from '../components/CallDemos';
 import Integrations from '../components/Integrations';
-import Pricing from '../components/Pricing';
 import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
@@ -21,7 +20,6 @@ export default function Home() {
         <VoiceDemo />
         <CallDemos />
         <Integrations />
-        <Pricing />
         <FAQ />
         <Contact />
       </main>

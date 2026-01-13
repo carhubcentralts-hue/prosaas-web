@@ -40,13 +40,6 @@ export default function Navbar() {
               {content.nav.voiceDemo}
             </button>
             <button 
-              onClick={() => scrollToSection('pricing')} 
-              className="text-gray-700 hover:text-blue-600 transition"
-              aria-label="מעבר לסעיף מחירים"
-            >
-              {content.nav.pricing}
-            </button>
-            <button 
               onClick={() => scrollToSection('faq')} 
               className="text-gray-700 hover:text-blue-600 transition"
               aria-label="מעבר לסעיף שאלות נפוצות"
@@ -96,13 +89,6 @@ export default function Navbar() {
                 aria-label="מעבר לסעיף הדגמת קול"
               >
                 {content.nav.voiceDemo}
-              </button>
-              <button 
-                onClick={() => scrollToSection('pricing')} 
-                className="text-gray-700 hover:text-blue-600 transition py-2"
-                aria-label="מעבר לסעיף מחירים"
-              >
-                {content.nav.pricing}
               </button>
               <button 
                 onClick={() => scrollToSection('faq')} 

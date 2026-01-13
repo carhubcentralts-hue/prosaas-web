@@ -34,17 +34,6 @@ export default function Pricing() {
               <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
               <p className="text-gray-600 mb-4">{plan.description}</p>
               
-              <div className="mb-6">
-                {plan.price.match(/^\u20AA?\d/) ? (
-                  <>
-                    <span className="text-3xl sm:text-4xl font-bold text-gray-900 whitespace-nowrap">{plan.price}</span>
-                    <span className="text-gray-500">/{content.pricing.monthly}</span>
-                  </>
-                ) : (
-                  <span className="text-xl sm:text-2xl font-bold text-gray-900">{plan.price}</span>
-                )}
-              </div>
-
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center gap-2">
@@ -71,15 +60,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        {/* Pricing Note and Customization */}
-        <div className="mt-12 text-center space-y-4">
-          <p className="text-gray-600 text-sm">
-            {content.pricing.note}
-          </p>
-          <p className="text-gray-700 font-medium">
-            {content.pricing.customization}
-          </p>
-        </div>
+
       </div>
     </section>
   );

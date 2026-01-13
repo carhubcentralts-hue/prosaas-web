@@ -42,17 +42,17 @@ export default function Integrations() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-8">
           {content.integrations.items.map((integration, index) => (
             <div 
               key={index}
-              className="flex flex-col items-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition"
+              className="flex flex-col items-center p-4 sm:p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition"
             >
-              <div className="text-gray-400 mb-4">
+              <div className="text-gray-400 mb-2 sm:mb-4">
                 {integrationIcons[integration.name] || integrationIcons.Email}
               </div>
-              <h3 className="font-semibold text-gray-900 mb-1">{integration.name}</h3>
-              <p className="text-sm text-gray-500 text-center">{integration.description}</p>
+              <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">{integration.name}</h3>
+              <p className="text-xs sm:text-sm text-gray-500 text-center">{integration.description}</p>
             </div>
           ))}
         </div>

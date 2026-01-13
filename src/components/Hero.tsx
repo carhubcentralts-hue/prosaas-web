@@ -38,11 +38,11 @@ export default function Hero() {
         </div>
         
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto">
+        <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-2xl mx-auto">
           {content.hero.stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl font-bold text-gray-900">{stat.value}</div>
-              <div className="text-sm text-gray-500">{stat.label}</div>
+              <div className="text-2xl sm:text-3xl font-bold text-gray-900">{stat.value}</div>
+              <div className="text-xs sm:text-sm text-gray-500">{stat.label}</div>
             </div>
           ))}
         </div>

@@ -13,19 +13,19 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {content.pricing.plans.map((plan, index) => (
             <div 
               key={index}
-              className={`relative bg-white rounded-2xl p-8 ${
+              className={`relative bg-white rounded-2xl p-6 sm:p-8 ${
                 plan.popular 
-                  ? 'border-2 border-blue-500 shadow-xl scale-105' 
+                  ? 'border-2 border-blue-500 shadow-xl md:scale-105 mt-4 md:mt-0' 
                   : 'border border-gray-200 shadow-sm'
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-1 rounded-full text-sm font-medium whitespace-nowrap">
                     {content.pricing.popular}
                   </span>
                 </div>
@@ -35,13 +35,13 @@ export default function Pricing() {
               <p className="text-gray-600 mb-4">{plan.description}</p>
               
               <div className="mb-6">
-                {plan.price.match(/^\d/) ? (
+                {plan.price.match(/^\u20AA?\d/) ? (
                   <>
-                    <span className="text-4xl font-bold text-gray-900">₪{plan.price}</span>
+                    <span className="text-3xl sm:text-4xl font-bold text-gray-900 whitespace-nowrap">{plan.price}</span>
                     <span className="text-gray-500">/{content.pricing.monthly}</span>
                   </>
                 ) : (
-                  <span className="text-2xl font-bold text-gray-900">{plan.price}</span>
+                  <span className="text-xl sm:text-2xl font-bold text-gray-900">{plan.price}</span>
                 )}
               </div>
 

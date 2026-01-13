@@ -6,4 +6,4 @@
  * 
  * Increment this version when updating voice demos or call demos.
  */
-export const ASSET_VERSION = 'v5';
+export const ASSET_VERSION = 'v6';

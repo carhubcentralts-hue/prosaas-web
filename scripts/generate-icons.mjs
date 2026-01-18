@@ -1,5 +1,4 @@
 import sharp from 'sharp';
-import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -7,7 +6,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const projectRoot = path.resolve(__dirname, '..');
-const publicDir = path.join(projectRoot, 'public');
 const appDir = path.join(projectRoot, 'src', 'app');
 
 // Create a simple blue icon with a phone symbol
@@ -30,21 +28,6 @@ async function generateIcon(size, outputPath) {
     .toFile(outputPath);
   
   console.log(`Generated ${path.basename(outputPath)} (${size}x${size})`);
-}
-
-async function generateFavicon() {
-  const sizes = [16, 32];
-  const icoPath = path.join(appDir, 'favicon.ico');
-  
-  // Generate a 32x32 PNG first, then convert to ICO
-  const tempPng = path.join(appDir, 'temp-favicon-32.png');
-  await generateIcon(32, tempPng);
-  
-  // For now, just copy the 32x32 as favicon.ico (ICO format is complex)
-  // In production, you'd use a proper ICO converter
-  console.log(`Note: Using PNG as favicon.ico. For better results, convert to proper ICO format.`);
-  
-  fs.unlinkSync(tempPng);
 }
 
 async function main() {

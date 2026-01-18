@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const projectRoot = path.resolve(__dirname, '..');
-const appDir = path.join(projectRoot, 'src', 'app');
+const publicDir = path.join(projectRoot, 'public');
 
 // Create a simple blue icon with a phone symbol
 async function generateIcon(size, outputPath) {
@@ -32,11 +32,11 @@ async function generateIcon(size, outputPath) {
 
 async function main() {
   try {
-    // Generate various icon sizes
-    // icon.png files in Next.js app directory are automatically used
-    await generateIcon(180, path.join(appDir, 'apple-icon.png'));
-    await generateIcon(192, path.join(appDir, 'icon-192.png'));
-    await generateIcon(512, path.join(appDir, 'icon-512.png'));
+    // Generate various icon sizes in the public directory
+    // These will be referenced by the metadata in layout.tsx
+    await generateIcon(180, path.join(publicDir, 'apple-icon.png'));
+    await generateIcon(192, path.join(publicDir, 'icon-192.png'));
+    await generateIcon(512, path.join(publicDir, 'icon-512.png'));
     
     // Generate opengraph image (1200x630 is standard)
     const ogSvg = `
@@ -55,7 +55,7 @@ async function main() {
     await sharp(Buffer.from(ogSvg))
       .resize(1200, 630)
       .png()
-      .toFile(path.join(appDir, 'opengraph-image.png'));
+      .toFile(path.join(publicDir, 'opengraph-image.png'));
     console.log('Generated opengraph-image.png (1200x630)');
     
     console.log('\nAll icons generated successfully!');

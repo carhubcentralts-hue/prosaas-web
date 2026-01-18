@@ -4,6 +4,8 @@ import content from "../../content/site.he.json";
 import AccessibilityWidget from "../components/AccessibilityWidget";
 
 export const metadata: Metadata = {
+  // metadataBase is required for absolute URLs in Open Graph images
+  // Set NEXT_PUBLIC_SITE_URL environment variable in production
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.co.il'),
   title: content.site.title,
   description: content.site.description,

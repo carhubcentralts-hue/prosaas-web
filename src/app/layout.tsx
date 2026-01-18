@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: content.site.title,
   description: content.site.description,
   keywords: content.site.keywords,
+  icons: {
+    icon: '/favicon.ico',
+  },
   openGraph: {
     title: content.site.title,
     description: content.site.description,

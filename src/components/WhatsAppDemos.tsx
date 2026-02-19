@@ -10,6 +10,13 @@ const DEMO_FILES: Record<string, string> = {
   // Example: 'demo-1': '/whatsapp-demos/demo-1.mp4',
 };
 
+interface Demo {
+  id: string;
+  title: string;
+  description: string;
+  tags?: string[];
+}
+
 interface DemoStatus {
   [key: string]: 'idle' | 'playing' | 'loading' | 'error' | 'not_available';
 }
@@ -87,12 +94,7 @@ export default function WhatsAppDemos() {
     } catch (error) {
       // Handle browser autoplay blocking
       setStatus(prev => ({ ...prev, [demoId]: 'error' }));
-
-      if (error instanceof Error && error.name === 'NotAllowedError') {
-        setErrorMessages(prev => ({ ...prev, [demoId]: content.whatsappDemos.browserBlocked }));
-      } else {
-        setErrorMessages(prev => ({ ...prev, [demoId]: content.whatsappDemos.browserBlocked }));
-      }
+      setErrorMessages(prev => ({ ...prev, [demoId]: content.whatsappDemos.browserBlocked }));
 
       setTimeout(() => {
         setStatus(prev => ({ ...prev, [demoId]: 'idle' }));
@@ -153,7 +155,7 @@ export default function WhatsAppDemos() {
         {/* Demos Grid */}
         {demos.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {demos.map((demo: any) => {
+            {demos.map((demo: Demo) => {
               const demoStatus = status[demo.id] || 'idle';
               const errorMessage = errorMessages[demo.id] || '';
               const isPlaying = demoStatus === 'playing';

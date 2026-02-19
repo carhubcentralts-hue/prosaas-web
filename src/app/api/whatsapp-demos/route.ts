@@ -5,7 +5,11 @@ import { join } from 'path';
 const VIDEO_EXTENSIONS = ['.mp4', '.webm', '.mov'];
 
 function filenameToTitle(filename: string): string {
-  return filename.replace(/\.[^/.]+$/, '').replace(/[_\-]+/g, ' ').trim();
+  // Remove extension (case-insensitive) and clean up the name
+  const withoutExt = filename.replace(/\.(mp4|webm|mov|MP4|WEBM|MOV)$/i, '');
+  // Replace underscores and dashes with spaces, but preserve Hebrew characters
+  const cleaned = withoutExt.replace(/[_\-]+/g, ' ').trim();
+  return cleaned;
 }
 
 export async function GET() {

@@ -7,6 +7,7 @@ This folder contains video demonstrations of the ProSaaS WhatsApp bot in action.
 - **Alternative formats**: WebM, MOV
 - **Resolution**: 720p or 1080p recommended
 - **File naming**: Use descriptive names in Hebrew or English
+- **⚠️ IMPORTANT**: Files **MUST** have a video extension (.mp4, .webm, or .mov) to appear on the site
 
 ## Adding New Demonstrations
 
@@ -50,3 +51,10 @@ Consider creating demonstrations for:
 - The component uses explicit file mapping for security
 - Videos support standard HTML5 video controls
 - Mobile-friendly responsive design
+- **Only files with extensions .mp4, .webm, or .mov are displayed** - files without these extensions will be ignored
+
+## Troubleshooting
+**Problem**: Video file doesn't appear on the website after adding it.
+**Solution**: Ensure the file has a proper video extension (.mp4, .webm, or .mov). For example:
+- ❌ Wrong: `בוט ווצאפ של שלום הדברות` (no extension)
+- ✅ Correct: `בוט ווצאפ של שלום הדברות.mp4` (with extension)

@@ -10,6 +10,36 @@ To receive leads from the contact form, configure the webhook URL in your enviro
 LEAD_WEBHOOK_URL=https://your-system.com/webhook/leads
 ```
 
+---
+
+## Configuring the Webhook on Vercel (Step-by-Step)
+
+When your site is hosted on Vercel, environment variables are set through the Vercel dashboard — **not** through a `.env` file.
+
+### Step 1 — Open your project settings
+1. Go to [https://vercel.com/dashboard](https://vercel.com/dashboard) and sign in.
+2. Click on your **prosaas-web** project.
+3. Click the **Settings** tab at the top of the project page.
+
+### Step 2 — Add the environment variable
+1. In the left sidebar, click **Environment Variables**.
+2. Click **Add New**.
+3. Fill in the fields:
+   - **Key**: `LEAD_WEBHOOK_URL`
+   - **Value**: the full HTTPS URL where you want leads sent, for example `https://your-system.com/webhook/leads`
+   - **Environment**: check **Production** (and **Preview** if you want to test it on preview deployments too).
+4. Click **Save**.
+
+### Step 3 — Redeploy
+Environment variable changes only take effect after a new deployment.
+1. Click the **Deployments** tab.
+2. Find the latest deployment, click the three-dot menu (⋮), and choose **Redeploy**.
+3. Once the redeployment completes, every lead submitted through the contact form will be POSTed to the URL you configured.
+
+> **Tip:** To verify it's working, use a free service like [https://webhook.site](https://webhook.site) as a temporary `LEAD_WEBHOOK_URL` — it shows you the exact JSON payload that arrives.
+
+---
+
 ## Webhook Endpoint
 The webhook is triggered when a user submits the contact form at:
 - **Endpoint**: `/api/lead` (POST)

@@ -19,45 +19,14 @@ whatsapp-demos/
   └── ...
 ```
 
-### 2. Update Component Mapping
-Edit `/src/components/WhatsAppDemos.tsx` and add your demo to the `DEMO_FILES` mapping:
+That's it! The site **automatically discovers** all video files in this folder via the `/api/whatsapp-demos` endpoint — no code changes required.
 
-```typescript
-const DEMO_FILES: Record<string, string> = {
-  'demo-1': '/whatsapp-demos/demo-1.mp4',
-  'demo-2': '/whatsapp-demos/demo-2.mp4',
-  // Add more demos here
-};
-```
+The display title is generated automatically from the filename (e.g. `customer-call.mp4` → `customer call`).
 
-### 3. Update Content Configuration
-Edit `/content/site.he.json` and add demo information to the `whatsappDemos.demos` array:
-
-```json
-{
-  "whatsappDemos": {
-    "demos": [
-      {
-        "id": "demo-1",
-        "title": "שיחה עם לקוח פוטנציאלי",
-        "description": "הבוט מנהל שיחה ראשונית עם לקוח ואוסף פרטים",
-        "tags": ["לידים", "מכירות"]
-      },
-      {
-        "id": "demo-2",
-        "title": "תמיכה טכנית",
-        "description": "הבוט עוזר ללקוח עם בעיה טכנית",
-        "tags": ["תמיכה", "שירות"]
-      }
-    ]
-  }
-}
-```
-
-### 4. Test Your Changes
+### 2. Test Your Changes
 1. Run the development server: `npm run dev`
 2. Navigate to the WhatsApp Demos section
-3. Verify the video plays correctly
+3. Verify the video appears and plays correctly
 
 ## Best Practices
 - Keep video files under 50MB for better performance

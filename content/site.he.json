@@ -103,11 +103,8 @@
     "playing": "מנגן הקלטה",
     "browserBlocked": "הדפדפן חסם ניגון – נסה שוב / בדוק שהסאונד פעיל",
     "voices": [
-      { "id": "alloy", "name": "נועה (נקבה)", "default": false },
       { "id": "ash", "name": "רון (זכר)", "default": false },
-      { "id": "ballad", "name": "שירה (נקבה)", "default": false },
       { "id": "coral", "name": "מיכל (נקבה)", "default": false },
-      { "id": "echo", "name": "אורי (זכר)", "default": true },
       { "id": "sage", "name": "דנה (נקבה)", "default": false },
       { "id": "shimmer", "name": "תמר (נקבה)", "default": false },
       { "id": "verse", "name": "דני (זכר)", "default": false },

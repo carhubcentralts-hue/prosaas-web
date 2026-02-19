@@ -103,15 +103,15 @@
     "playing": "מנגן הקלטה",
     "browserBlocked": "הדפדפן חסם ניגון – נסה שוב / בדוק שהסאונד פעיל",
     "voices": [
-      { "id": "alloy", "name": "אלוי", "default": false },
-      { "id": "ash", "name": "אש", "default": false },
-      { "id": "ballad", "name": "בלד", "default": false },
-      { "id": "coral", "name": "קורל", "default": false },
-      { "id": "echo", "name": "אקו", "default": true },
-      { "id": "sage", "name": "סייג׳", "default": false },
-      { "id": "shimmer", "name": "שימר", "default": false },
-      { "id": "verse", "name": "וורס", "default": false },
-      { "id": "marin", "name": "מרין", "default": false }
+      { "id": "alloy", "name": "נועה (נקבה)", "default": false },
+      { "id": "ash", "name": "רון (זכר)", "default": false },
+      { "id": "ballad", "name": "שירה (נקבה)", "default": false },
+      { "id": "coral", "name": "מיכל (נקבה)", "default": false },
+      { "id": "echo", "name": "אורי (זכר)", "default": true },
+      { "id": "sage", "name": "דנה (נקבה)", "default": false },
+      { "id": "shimmer", "name": "תמר (נקבה)", "default": false },
+      { "id": "verse", "name": "דני (זכר)", "default": false },
+      { "id": "marin", "name": "ליאל (נקבה)", "default": false }
     ]
   },
   "callDemos": {
@@ -155,6 +155,17 @@
         "tags": ["מסעדה", "מזון"]
       }
     ]
+  },
+  "whatsappDemos": {
+    "title": "הדגמות בוט WhatsApp 💬",
+    "subtitle": "צפו איך הבוט שלנו מטפל בפניות ב-WhatsApp באופן אוטומטי",
+    "emptyState": "כרגע אין הדגמות זמינות. בקרוב…",
+    "playButton": "צפה בהדגמה ▶️",
+    "stopButton": "עצור ⏸",
+    "playing": "מנגן וידאו",
+    "notAvailable": "הדגמה לא זמינה עדיין",
+    "browserBlocked": "הדפדפן חסם ניגון – נסה שוב",
+    "demos": []
   },
   "integrations": {
     "title": "אינטגרציות",

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = getBlogPostHe(slug)
   if (!post) return {}
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.co.il'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.prosaas.website'
   return {
     title: post.title,
     description: post.description,
@@ -90,7 +90,7 @@ export default async function HebrewBlogPostPage({ params }: Props) {
   const post = getBlogPostHe(slug)
   if (!post) notFound()
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.co.il'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.prosaas.website'
   const relatedPosts = blogPostsHe.filter(p => p.slug !== slug).slice(0, 3)
 
   return (

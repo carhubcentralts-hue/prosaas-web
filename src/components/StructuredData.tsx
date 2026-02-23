@@ -18,7 +18,7 @@ interface ArticleSchemaProps {
 
 type StructuredDataProps = OrganizationSchemaProps | SoftwareSchemaProps | FAQSchemaProps | ArticleSchemaProps
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.co.il'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.prosaas.website'
 
 function getOrganizationSchema() {
   return {

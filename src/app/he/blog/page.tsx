@@ -3,7 +3,7 @@ import Link from 'next/link'
 import SEOPageLayout from '../../../components/SEOPageLayout'
 import { blogPostsHe } from '../../../lib/blog-posts-he'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.co.il'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.prosaas.website'
 
 export const metadata: Metadata = {
   title: 'בלוג פרוסאס | תובנות על AI, CRM ואוטומציה עסקית',

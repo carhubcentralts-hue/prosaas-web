@@ -3,7 +3,7 @@ import { getAllBlogSlugs } from '../lib/blog-posts'
 import { getAllBlogSlugsHe } from '../lib/blog-posts-he'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.co.il'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.prosaas.website'
   const now = new Date()
 
   const staticPages = [

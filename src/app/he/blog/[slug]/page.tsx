@@ -22,9 +22,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.title,
     description: post.description,
     alternates: {
-      canonical: `${siteUrl}/he/בלוג/${slug}`,
+      canonical: `${siteUrl}/he/blog/${slug}`,
       languages: {
-        'he': `${siteUrl}/he/בלוג/${slug}`,
+        'he': `${siteUrl}/he/blog/${slug}`,
         'en': `${siteUrl}/blog`,
       },
     },
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
       type: 'article',
       publishedTime: post.date,
-      url: `${siteUrl}/he/בלוג/${slug}`,
+      url: `${siteUrl}/he/blog/${slug}`,
       locale: 'he_IL',
     },
   }
@@ -100,14 +100,14 @@ export default async function HebrewBlogPostPage({ params }: Props) {
         headline={post.title}
         description={post.description}
         datePublished={post.date}
-        url={`${siteUrl}/he/בלוג/${slug}`}
+        url={`${siteUrl}/he/blog/${slug}`}
       />
       <div className="max-w-4xl mx-auto px-4 py-16" dir="rtl">
         {/* Breadcrumb */}
         <nav className="mb-8 text-sm text-gray-500" aria-label="נתיב ניווט">
           <Link href="/" className="hover:text-blue-600">בית</Link>
           <span className="mx-2" aria-hidden="true">›</span>
-          <Link href="/he/בלוג" className="hover:text-blue-600">בלוג</Link>
+          <Link href="/he/blog" className="hover:text-blue-600">בלוג</Link>
           <span className="mx-2" aria-hidden="true">›</span>
           <span className="text-gray-700">{post.title}</span>
         </nav>
@@ -165,7 +165,7 @@ export default async function HebrewBlogPostPage({ params }: Props) {
               {relatedPosts.map(related => (
                 <Link
                   key={related.slug}
-                  href={`/he/בלוג/${related.slug}`}
+                  href={`/he/blog/${related.slug}`}
                   className="bg-white rounded-xl border border-gray-100 p-5 hover:border-blue-200 hover:shadow-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                   aria-label={`קרא: ${related.title}`}
                 >

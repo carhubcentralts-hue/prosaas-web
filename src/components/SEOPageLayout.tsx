@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import LanguageSwitcher from './LanguageSwitcher'
+import NavHeader from './NavHeader'
 
 interface SEOPageLayoutProps {
   children: React.ReactNode
@@ -14,41 +15,28 @@ export default function SEOPageLayout({ children, lang = 'en', alternateUrl }: S
   const homeUrl = isHebrew ? '/' : '/en'
   const contactUrl = isHebrew ? '/#contact' : '/en#contact'
   const featuresUrl = isHebrew ? '/#features' : '/en#features'
-  const blogUrl = isHebrew ? '/he/בלוג' : '/blog'
-  const aboutUrl = '/about'
+  const voiceDemoUrl = isHebrew ? '/#voice-demo' : '/en#voice-demo'
+  const faqUrl = isHebrew ? '/#faq' : '/en#faq'
+  const blogUrl = isHebrew ? '/he/blog' : '/blog'
+  const aboutUrl = isHebrew ? '/he/about' : '/about'
+  const termsUrl = isHebrew ? '/terms' : '/en/terms'
+  const privacyUrl = isHebrew ? '/privacy' : '/en/privacy'
 
   return (
     <div className="min-h-screen bg-white" dir={isHebrew ? 'rtl' : 'ltr'} lang={isHebrew ? 'he' : 'en'}>
       {/* Top Navigation */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
-          <Link href={homeUrl} className="flex items-center flex-shrink-0" aria-label="ProSaaS – דף הבית / Home">
-            <Image src="/logo.svg" alt="ProSaaS" width={120} height={40} />
-          </Link>
-          <nav className="hidden md:flex items-center gap-6" aria-label={isHebrew ? 'ניווט ראשי' : 'Main navigation'}>
-            <Link href={featuresUrl} className="text-gray-600 hover:text-gray-900 transition text-sm font-medium">
-              {isHebrew ? 'יכולות' : 'Features'}
-            </Link>
-            <Link href={blogUrl} className="text-gray-600 hover:text-gray-900 transition text-sm font-medium">
-              {isHebrew ? 'בלוג' : 'Blog'}
-            </Link>
-            <Link href={aboutUrl} className="text-gray-600 hover:text-gray-900 transition text-sm font-medium">
-              {isHebrew ? 'אודות' : 'About'}
-            </Link>
-            <LanguageSwitcher
-              lang={lang}
-              heUrl={isHebrew ? undefined : (alternateUrl || '/')}
-              enUrl={isHebrew ? (alternateUrl || '/en') : undefined}
-            />
-          </nav>
-          <Link
-            href={contactUrl}
-            className="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-          >
-            {isHebrew ? 'קבל הדגמה חינם' : 'Get a Free Demo'}
-          </Link>
-        </div>
-      </header>
+      <NavHeader
+        lang={lang}
+        homeUrl={homeUrl}
+        featuresUrl={featuresUrl}
+        voiceDemoUrl={voiceDemoUrl}
+        faqUrl={faqUrl}
+        blogUrl={blogUrl}
+        aboutUrl={aboutUrl}
+        contactUrl={contactUrl}
+        heUrl={isHebrew ? undefined : (alternateUrl || '/')}
+        enUrl={isHebrew ? (alternateUrl || '/en') : undefined}
+      />
 
       {/* Main Content */}
       <main id="main-content">{children}</main>
@@ -78,9 +66,9 @@ export default function SEOPageLayout({ children, lang = 'en', alternateUrl }: S
                 <ul className="space-y-2">
                   {isHebrew ? (
                     <>
-                      <li><Link href="/he/מערכת-ai-לעסקים" className="text-gray-400 hover:text-white transition text-sm">מוקד שיחות AI</Link></li>
-                      <li><Link href="/he/בוט-וואטסאפ-לעסקים" className="text-gray-400 hover:text-white transition text-sm">בוט וואטסאפ</Link></li>
-                      <li><Link href="/he/crm-חכם" className="text-gray-400 hover:text-white transition text-sm">CRM חכם</Link></li>
+                      <li><Link href="/he/ai-system" className="text-gray-400 hover:text-white transition text-sm">מוקד שיחות AI</Link></li>
+                      <li><Link href="/he/whatsapp-bot" className="text-gray-400 hover:text-white transition text-sm">בוט וואטסאפ</Link></li>
+                      <li><Link href="/he/smart-crm" className="text-gray-400 hover:text-white transition text-sm">CRM חכם</Link></li>
                     </>
                   ) : (
                     <>
@@ -108,8 +96,8 @@ export default function SEOPageLayout({ children, lang = 'en', alternateUrl }: S
                 <ul className="space-y-2">
                   <li><Link href={aboutUrl} className="text-gray-400 hover:text-white transition text-sm">{isHebrew ? 'אודות' : 'About'}</Link></li>
                   <li><Link href={blogUrl} className="text-gray-400 hover:text-white transition text-sm">{isHebrew ? 'בלוג' : 'Blog'}</Link></li>
-                  <li><Link href="/privacy" className="text-gray-400 hover:text-white transition text-sm">{isHebrew ? 'פרטיות' : 'Privacy'}</Link></li>
-                  <li><Link href="/terms" className="text-gray-400 hover:text-white transition text-sm">{isHebrew ? 'תנאי שימוש' : 'Terms'}</Link></li>
+                  <li><Link href={privacyUrl} className="text-gray-400 hover:text-white transition text-sm">{isHebrew ? 'פרטיות' : 'Privacy'}</Link></li>
+                  <li><Link href={termsUrl} className="text-gray-400 hover:text-white transition text-sm">{isHebrew ? 'תנאי שימוש' : 'Terms'}</Link></li>
                 </ul>
               </div>
             </div>

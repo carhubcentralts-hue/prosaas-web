@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'מערכת AI לעסקים | פרוסאס – CRM חכם עם בוט קול ווואטסאפ',
   description: 'פרוסאס מציעה מערכת AI לעסקים שמנהלת שיחות נכנסות, הודעות וואטסאפ ולידים — אוטומטית, 24/7. CRM חכם עם בוט קול ובוט וואטסאפ בעברית.',
   keywords: 'מערכת AI לעסקים, AI לעסקים, CRM חכם, בוט קול, בוט וואטסאפ, אוטומציה לעסקים',
-  alternates: { canonical: '/he/מערכת-ai-לעסקים' },
+  alternates: { canonical: '/he/ai-system' },
   openGraph: {
     title: 'מערכת AI לעסקים | פרוסאס',
     description: 'מערכת AI שמנהלת שיחות, וואטסאפ ולידים אוטומטית.',

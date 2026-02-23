@@ -5,7 +5,7 @@ import SEOPageLayout from '../../components/SEOPageLayout'
 export const metadata: Metadata = {
   title: 'About ProSaaS | AI-Powered Business Communication Platform',
   description: 'Learn about ProSaaS – the Israeli-built AI platform that combines CRM, WhatsApp automation, and voice bots to help businesses manage every customer interaction automatically.',
-  alternates: { canonical: '/about' },
+  alternates: { canonical: '/about', languages: { 'en': '/about', 'he': '/he/about' } },
   openGraph: {
     title: 'About ProSaaS',
     description: 'The Israeli-built AI platform for business communication automation.',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <SEOPageLayout>
+    <SEOPageLayout lang="en" alternateUrl="/he/about">
       <div className="max-w-4xl mx-auto px-4 py-16">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">About ProSaaS</h1>
 

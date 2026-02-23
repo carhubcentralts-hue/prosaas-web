@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import SEOPageLayout from '../../../components/SEOPageLayout'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.co.il'

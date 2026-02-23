@@ -17,8 +17,8 @@ export default function SEOPageLayout({ children, lang = 'en', alternateUrl }: S
   const featuresUrl = isHebrew ? '/#features' : '/en#features'
   const voiceDemoUrl = isHebrew ? '/#voice-demo' : '/en#voice-demo'
   const faqUrl = isHebrew ? '/#faq' : '/en#faq'
-  const blogUrl = isHebrew ? '/he/בלוג' : '/blog'
-  const aboutUrl = isHebrew ? '/he/אודות' : '/about'
+  const blogUrl = isHebrew ? '/he/blog' : '/blog'
+  const aboutUrl = isHebrew ? '/he/about' : '/about'
   const termsUrl = isHebrew ? '/terms' : '/en/terms'
   const privacyUrl = isHebrew ? '/privacy' : '/en/privacy'
 
@@ -66,9 +66,9 @@ export default function SEOPageLayout({ children, lang = 'en', alternateUrl }: S
                 <ul className="space-y-2">
                   {isHebrew ? (
                     <>
-                      <li><Link href="/he/מערכת-ai-לעסקים" className="text-gray-400 hover:text-white transition text-sm">מוקד שיחות AI</Link></li>
-                      <li><Link href="/he/בוט-וואטסאפ-לעסקים" className="text-gray-400 hover:text-white transition text-sm">בוט וואטסאפ</Link></li>
-                      <li><Link href="/he/crm-חכם" className="text-gray-400 hover:text-white transition text-sm">CRM חכם</Link></li>
+                      <li><Link href="/he/ai-system" className="text-gray-400 hover:text-white transition text-sm">מוקד שיחות AI</Link></li>
+                      <li><Link href="/he/whatsapp-bot" className="text-gray-400 hover:text-white transition text-sm">בוט וואטסאפ</Link></li>
+                      <li><Link href="/he/smart-crm" className="text-gray-400 hover:text-white transition text-sm">CRM חכם</Link></li>
                     </>
                   ) : (
                     <>

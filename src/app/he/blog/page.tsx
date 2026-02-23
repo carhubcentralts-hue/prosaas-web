@@ -11,9 +11,9 @@ export const metadata: Metadata = {
     'מאמרים מקצועיים על אוטומציה AI, CRM, שיווק בוואטסאפ וניהול לידים לעסקים. מדריכים מעשיים ומאמרים מבוססי נתונים מצוות פרוסאס.',
   keywords: 'בלוג AI, בלוג CRM, בלוג וואטסאפ, ניהול לידים, אוטומציה עסקית, פרוסאס בלוג',
   alternates: {
-    canonical: `${siteUrl}/he/בלוג`,
+    canonical: `${siteUrl}/he/blog`,
     languages: {
-      'he': `${siteUrl}/he/בלוג`,
+      'he': `${siteUrl}/he/blog`,
       'en': `${siteUrl}/blog`,
     },
   },
@@ -45,7 +45,7 @@ export default function HebrewBlogPage() {
           {blogPostsHe.map(post => (
             <Link
               key={post.slug}
-              href={`/he/בלוג/${post.slug}`}
+              href={`/he/blog/${post.slug}`}
               className="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               aria-label={`קרא את המאמר: ${post.title}`}
             >

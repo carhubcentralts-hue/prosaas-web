@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { Metadata } from 'next';
 import SEOPageLayout from '../../components/SEOPageLayout';
 import content from '../../../content/site.he.json';

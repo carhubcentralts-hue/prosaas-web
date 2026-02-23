@@ -4,7 +4,7 @@ import content from "../../content/site.he.json";
 import AccessibilityWidget from "../components/AccessibilityWidget";
 import StructuredData from "../components/StructuredData";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.co.il'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.prosaas.website'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

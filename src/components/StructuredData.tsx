@@ -4,6 +4,9 @@ interface OrganizationSchemaProps {
 interface SoftwareSchemaProps {
   type: 'software'
 }
+interface LocalBusinessSchemaProps {
+  type: 'localbusiness'
+}
 interface FAQSchemaProps {
   type: 'faq'
   items: Array<{ question: string; answer: string }>
@@ -16,7 +19,7 @@ interface ArticleSchemaProps {
   url: string
 }
 
-type StructuredDataProps = OrganizationSchemaProps | SoftwareSchemaProps | FAQSchemaProps | ArticleSchemaProps
+type StructuredDataProps = OrganizationSchemaProps | SoftwareSchemaProps | LocalBusinessSchemaProps | FAQSchemaProps | ArticleSchemaProps
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.prosaas.website'
 
@@ -36,6 +39,10 @@ function getOrganizationSchema() {
     },
     sameAs: [
       'https://wa.me/972557270844',
+      'https://www.facebook.com/profile.php?id=61574820643163',
+      'https://www.instagram.com/prosaas.ai/',
+      'https://www.linkedin.com/company/prosaas/',
+      'https://x.com/ProSaaS',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -77,6 +84,31 @@ function getSoftwareSchema() {
       name: 'ProSaaS',
       url: siteUrl,
     },
+  }
+}
+
+function getLocalBusinessSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'ProSaaS',
+    url: siteUrl,
+    logo: `${siteUrl}/logo.svg`,
+    image: `${siteUrl}/opengraph-image.png`,
+    description: 'ProSaaS – פלטפורמת CRM, WhatsApp ובוט שיחות מבוססת AI לעסקים. ניהול לידים, תיעוד שיחות ומענה אוטומטי 24/7.',
+    telephone: '+972549750505',
+    email: 'support@prosaas.pro',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'IL',
+    },
+    sameAs: [
+      'https://www.facebook.com/profile.php?id=61574820643163',
+      'https://www.instagram.com/prosaas.ai/',
+      'https://www.linkedin.com/company/prosaas/',
+      'https://x.com/ProSaaS',
+    ],
+    priceRange: '₪₪',
   }
 }
 
@@ -126,6 +158,8 @@ export default function StructuredData(props: StructuredDataProps) {
     schema = getOrganizationSchema()
   } else if (props.type === 'software') {
     schema = getSoftwareSchema()
+  } else if (props.type === 'localbusiness') {
+    schema = getLocalBusinessSchema()
   } else if (props.type === 'faq') {
     schema = getFAQSchema(props.items)
   } else {

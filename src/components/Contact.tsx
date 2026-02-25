@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import content from '../../content/site.he.json';
 
 export default function Contact() {
@@ -11,6 +11,13 @@ export default function Contact() {
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [emailVisible, setEmailVisible] = useState(false);
+
+  useEffect(() => {
+    // Reveal email client-side only to protect from spam harvesters
+    const timer = setTimeout(() => setEmailVisible(true), 0);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -133,16 +140,16 @@ export default function Contact() {
             </a>
 
             <a
-              href={`mailto:${content.contact.email.address}`}
+              href={emailVisible ? `mailto:${content.contact.email.address}` : '#'}
               className="flex items-center gap-4 bg-gray-800 text-white p-6 rounded-2xl hover:bg-gray-900 transition"
-              aria-label={`שלח מייל ל-${content.contact.email.address}`}
+              aria-label={`שלח מייל ל-ProSaaS`}
             >
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               <div>
                 <span className="text-lg font-semibold block">{content.contact.email.text}</span>
-                <span className="text-gray-300 text-sm">{content.contact.email.address}</span>
+                <span className="text-gray-300 text-sm">{emailVisible ? content.contact.email.address : ''}</span>
               </div>
             </a>
 

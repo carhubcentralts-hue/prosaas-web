@@ -1,0 +1,41 @@
+# ProSaaS
+
+> ProSaaS is an AI-powered CRM, WhatsApp automation and voice bot platform for businesses in Israel.
+
+## About
+
+ProSaaS connects CRM, WhatsApp and AI phone calls into one smart system that manages, records and converts customer inquiries automatically — 24/7, without missing a single lead.
+
+## Products
+
+- **AI Voice Bot** — Real-time natural Hebrew phone answering, transcription, summaries and CRM logging
+- **WhatsApp Bot** — Automatic 24/7 replies, lead qualification and agent handoff
+- **Smart CRM** — Full customer management with call history, tags, pipeline and task tracking
+- **Sales Pipeline** — Lead statuses, follow-ups and meeting scheduling
+- **Dashboards** — Inquiry volume, response times and conversion analytics
+- **Integrations** — Webhooks, API, n8n, Twilio, WhatsApp Business API
+
+## Target Audience
+
+Small and medium businesses in Israel that need automated customer communication: dental clinics, real estate, law firms, moving companies, cleaning services, property management and more.
+
+## Pricing
+
+- Starter: ₪600/month
+- Business: ₪1,500/month
+- Enterprise: custom pricing
+
+## Contact
+
+- Website: https://www.prosaas.website
+- Email: support@prosaas.pro
+- Phone: +972-54-9750505
+- WhatsApp: https://wa.me/972557270844
+- Instagram: https://www.instagram.com/prosaas.ai/
+- Facebook: https://www.facebook.com/profile.php?id=61574820643163
+- LinkedIn: https://www.linkedin.com/company/prosaas/
+- X (Twitter): https://x.com/ProSaaS
+
+## Languages
+
+Hebrew (primary), English

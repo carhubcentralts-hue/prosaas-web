@@ -69,6 +69,9 @@ export const metadata: Metadata = {
     images: ['/opengraph-image.png'],
     site: '@ProSaaS',
   },
+  other: {
+    'fb:pages': '61574820643163',
+  },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
   },
@@ -87,6 +90,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <StructuredData type="organization" />
         <StructuredData type="software" />
+        <StructuredData type="localbusiness" />
       </head>
       <body className="font-sans antialiased">
         {children}

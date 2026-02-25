@@ -19,11 +19,6 @@ ProSaaS connects CRM, WhatsApp and AI phone calls into one smart system that man
 
 Small and medium businesses in Israel that need automated customer communication: dental clinics, real estate, law firms, moving companies, cleaning services, property management and more.
 
-## Pricing
-
-- Starter: ₪600/month
-- Business: ₪1,500/month
-- Enterprise: custom pricing
 
 ## Contact
 
@@ -33,7 +28,7 @@ Small and medium businesses in Israel that need automated customer communication
 - WhatsApp: https://wa.me/972557270844
 - Instagram: https://www.instagram.com/prosaas.ai/
 - Facebook: https://www.facebook.com/profile.php?id=61574820643163
-- LinkedIn: https://www.linkedin.com/company/prosaas/
+- LinkedIn: https://www.linkedin.com/company/prosaas-%D7%A4%D7%A8%D7%95%D7%A1%D7%90%D7%A1
 - X (Twitter): https://x.com/ProSaaS
 
 ## Languages

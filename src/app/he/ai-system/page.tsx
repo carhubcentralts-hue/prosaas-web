@@ -2,11 +2,13 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SEOPageLayout from '../../../components/SEOPageLayout'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website'
+
 export const metadata: Metadata = {
   title: 'מערכת AI לעסקים | פרוסאס – CRM חכם עם בוט קול ווואטסאפ',
   description: 'פרוסאס מציעה מערכת AI לעסקים שמנהלת שיחות נכנסות, הודעות וואטסאפ ולידים — אוטומטית, 24/7. CRM חכם עם בוט קול ובוט וואטסאפ בעברית.',
   keywords: 'מערכת AI לעסקים, AI לעסקים, CRM חכם, בוט קול, בוט וואטסאפ, אוטומציה לעסקים, פרוסאס, פרו סאס, ProSaaS, מוקד שיחות AI',
-  alternates: { canonical: '/he/ai-system' },
+  alternates: { canonical: `${siteUrl}/he/ai-system` },
   openGraph: {
     title: 'מערכת AI לעסקים | פרוסאס',
     description: 'מערכת AI שמנהלת שיחות, וואטסאפ ולידים אוטומטית.',

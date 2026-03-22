@@ -2,6 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   async redirects() {
+    // NOTE: www→non-www redirect is intentionally NOT defined here.
+    // Defining it in next.config.ts conflicts with Vercel's platform-level
+    // domain redirect and creates an infinite redirect loop (ERR_TOO_MANY_REDIRECTS).
+    // Configure www→non-www (or vice-versa) exclusively in the Vercel dashboard
+    // under Project → Settings → Domains, not in application code.
+    //
+    // NOTE: /he→/ redirect is handled by src/app/he/page.tsx via permanentRedirect('/').
     return []
   },
   async headers() {

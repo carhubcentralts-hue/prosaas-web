@@ -121,7 +121,7 @@ function getLocalBusinessSchema() {
     sameAs: [
       'https://www.facebook.com/profile.php?id=61574820643163',
       'https://www.instagram.com/prosaas.ai/',
-      'https://www.linkedin.com/company/prosaas/',
+      'https://www.linkedin.com/company/prosaas-%D7%A4%D7%A8%D7%95%D7%A1%D7%90%D7%A1',
       'https://x.com/ProSaaS',
     ],
     priceRange: '₪₪',

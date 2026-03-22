@@ -2,11 +2,13 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SEOPageLayout from '../../../components/SEOPageLayout'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website'
+
 export const metadata: Metadata = {
   title: 'CRM חכם לעסקים | פרוסאס – ניהול לידים ולקוחות עם AI',
   description: 'פרוסאס מציעה CRM חכם לעסקים עם AI מובנה — ניהול לידים אוטומטי, מעקב אחר לקוחות, ותזכורות פולואפ. כל הכלים במקום אחד, בעברית.',
   keywords: 'CRM חכם, CRM לעסקים, ניהול לידים, מערכת CRM, CRM AI, ניהול לקוחות, פרוסאס, פרו סאס, ProSaaS, מוקד שיחות',
-  alternates: { canonical: '/he/smart-crm' },
+  alternates: { canonical: `${siteUrl}/he/smart-crm` },
   openGraph: {
     title: 'CRM חכם לעסקים | פרוסאס',
     description: 'CRM חכם עם AI לניהול לידים ולקוחות אוטומטי.',

@@ -1,3 +1,6 @@
+interface WebSiteSchemaProps {
+  type: 'website'
+}
 interface OrganizationSchemaProps {
   type: 'organization'
 }
@@ -19,9 +22,19 @@ interface ArticleSchemaProps {
   url: string
 }
 
-type StructuredDataProps = OrganizationSchemaProps | SoftwareSchemaProps | LocalBusinessSchemaProps | FAQSchemaProps | ArticleSchemaProps
+type StructuredDataProps = WebSiteSchemaProps | OrganizationSchemaProps | SoftwareSchemaProps | LocalBusinessSchemaProps | FAQSchemaProps | ArticleSchemaProps
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.prosaas.website'
+
+function getWebSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'פרו סאס',
+    alternateName: ['ProSaaS', 'פרוסאס', 'פרו-סאס'],
+    url: siteUrl,
+  }
+}
 
 function getOrganizationSchema() {
   return {
@@ -157,7 +170,9 @@ function getArticleSchema(props: ArticleSchemaProps) {
 
 export default function StructuredData(props: StructuredDataProps) {
   let schema
-  if (props.type === 'organization') {
+  if (props.type === 'website') {
+    schema = getWebSiteSchema()
+  } else if (props.type === 'organization') {
     schema = getOrganizationSchema()
   } else if (props.type === 'software') {
     schema = getSoftwareSchema()

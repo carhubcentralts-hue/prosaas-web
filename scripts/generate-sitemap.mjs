@@ -46,7 +46,7 @@ function urlEntry({ url, priority, changefreq, alternates }) {
   const lines = [
     `  <url>`,
     `    <loc>${url}</loc>`,
-    `    <lastmod>${new Date().toISOString()}</lastmod>`,
+    `    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>`,
     `    <changefreq>${changefreq}</changefreq>`,
     `    <priority>${priority}</priority>`,
   ];
@@ -61,8 +61,9 @@ function generateSitemap() {
 
   const entries = [
     // Homepage (Hebrew default <-> English)
-    urlEntry({ url: siteUrl,         priority: '1.0', changefreq: 'weekly', alternates: xhtmlAlternates(siteUrl, `${siteUrl}/en`) }),
-    urlEntry({ url: `${siteUrl}/en`, priority: '0.9', changefreq: 'weekly', alternates: xhtmlAlternates(siteUrl, `${siteUrl}/en`) }),
+    urlEntry({ url: siteUrl,          priority: '1.0', changefreq: 'weekly', alternates: xhtmlAlternates(siteUrl, `${siteUrl}/en`) }),
+    urlEntry({ url: `${siteUrl}/he`,  priority: '0.9', changefreq: 'weekly', alternates: xhtmlAlternates(`${siteUrl}/he`, `${siteUrl}/en`) }),
+    urlEntry({ url: `${siteUrl}/en`,  priority: '0.9', changefreq: 'weekly', alternates: xhtmlAlternates(`${siteUrl}/he`, `${siteUrl}/en`) }),
 
     // Hebrew feature pages
     urlEntry({ url: `${siteUrl}/he/ai-system`,    priority: '0.9', changefreq: 'monthly' }),

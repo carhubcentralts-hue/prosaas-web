@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.prosaas.website'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website'
 
 export const metadata: Metadata = {
   alternates: {

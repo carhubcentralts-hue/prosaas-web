@@ -3,7 +3,7 @@ import SEOPageLayout from '../../components/SEOPageLayout'
 import StructuredData from '../../components/StructuredData'
 import ContactFormEn from '../../components/ContactFormEn'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.prosaas.website'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website'
 
 export const metadata: Metadata = {
   title: 'ProSaaS – All Your Business Communication in One Smart Place | CRM + WhatsApp + AI Calls',

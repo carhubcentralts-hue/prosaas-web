@@ -8,13 +8,13 @@ import StructuredData from "../components/StructuredData";
 
 const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.prosaas.website'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: content.site.title,
-    template: `%s | ProSaaS - פרוסאס`,
+    template: `%s | פרו סאס - ProSaaS`,
   },
   description: content.site.description,
   keywords: "ProSaaS, PROSAAS, PRO SAAS, Pro SaaS, פרוסאס, פרו סאס, פרו-סאס, prosaas.website, מערכת פרוסאס, פרוסאס CRM, פרוסאס AI, פרו סאס בינה מלאכותית, ai call center system, whatsapp automation for business, crm with ai, ai answering service, מערכת מענה אוטומטי לעסקים, מערכת AI לשיחות, CRM חכם לעסקים, בוט וואטסאפ, ניהול לידים, AI לעסקים קטנים, פרוסאס מוקד שיחות, פרו סאס וואטסאפ, פרוסאס ניהול לידים",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "he_IL",
     alternateLocale: "en_US",
-    siteName: "ProSaaS - פרוסאס",
+    siteName: "פרו סאס | ProSaaS",
     url: siteUrl,
     images: [
       {
@@ -89,6 +89,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="theme-color" content="#3B82F6" />
         <link rel="manifest" href="/site.webmanifest" />
+        <StructuredData type="website" />
         <StructuredData type="organization" />
         <StructuredData type="software" />
         <StructuredData type="localbusiness" />

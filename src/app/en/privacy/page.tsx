@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import SEOPageLayout from '../../../components/SEOPageLayout'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.prosaas.website'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | ProSaaS',

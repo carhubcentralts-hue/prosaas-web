@@ -4,10 +4,11 @@ import { getAllBlogSlugsHe } from '../lib/blog-posts-he'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website'
-  const lastModified = new Date()
+  const lastModified = new Date().toISOString().split('T')[0]
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: `${siteUrl}`, lastModified, changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${siteUrl}/he`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${siteUrl}/en`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
     // Hebrew service pages
     { url: `${siteUrl}/he/ai-system`, lastModified, changeFrequency: 'monthly', priority: 0.9 },

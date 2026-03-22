@@ -19,7 +19,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, '..');
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.prosaas.website';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website';
 
 /** Extract slug values from a TypeScript blog-posts file using a capture group. */
 function extractSlugs(filePath) {

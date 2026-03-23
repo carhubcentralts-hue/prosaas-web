@@ -14,6 +14,17 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        // Ensure sitemap is served as XML so browsers and crawlers parse it
+        // correctly instead of rendering it as HTML (which strips all tags).
+        source: '/sitemap.xml',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/xml; charset=utf-8',
+          },
+        ],
+      },
+      {
         source: '/:path((?!api|_next/static|_next/image|favicon\\.ico).*)',
         headers: [
           {

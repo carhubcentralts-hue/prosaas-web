@@ -21,14 +21,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: today,
       changeFrequency: 'weekly',
       priority: 0.9,
-      alternates: { languages: { 'x-default': siteUrl, he: `${siteUrl}/he`, en: `${siteUrl}/en` } },
+      alternates: { languages: { 'x-default': siteUrl, he: siteUrl, en: `${siteUrl}/en` } },
     },
     {
       url: `${siteUrl}/en`,
       lastModified: today,
       changeFrequency: 'weekly',
       priority: 0.9,
-      alternates: { languages: { 'x-default': siteUrl, he: `${siteUrl}/he`, en: `${siteUrl}/en` } },
+      alternates: { languages: { 'x-default': siteUrl, he: siteUrl, en: `${siteUrl}/en` } },
     },
 
     // Hebrew feature pages

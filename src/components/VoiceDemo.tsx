@@ -6,15 +6,12 @@ import { ASSET_VERSION } from '../lib/assets';
 
 // Explicit mapping of voice IDs to MP3 files - NO dynamic construction
 const VOICE_FILES: Record<string, string> = {
-  alloy: "/voices/alloy.mp3",
-  ash: "/voices/ash.mp3",
-  ballad: "/voices/ballad.mp3",
-  coral: "/voices/coral.mp3",
-  echo: "/voices/echo.mp3",
-  marin: "/voices/marin.mp3",
-  sage: "/voices/sage.mp3",
-  shimmer: "/voices/shimmer.mp3",
-  verse: "/voices/verse.mp3",
+  "אייל": "/voices/אייל.mp3",
+  "הילה": "/voices/הילה.mp3",
+  "לביא": "/voices/לביא.mp3",
+  "מאיה": "/voices/מאיה.mp3",
+  "עמית": "/voices/עמית.mp3",
+  "רוני": "/voices/רוני.mp3",
 };
 
 export default function VoiceDemo() {

@@ -18,15 +18,12 @@ const __dirname = path.dirname(__filename);
 
 // All required voice files
 const REQUIRED_VOICES = [
-  'alloy',
-  'ash',
-  'ballad',
-  'coral',
-  'echo',
-  'sage',
-  'shimmer',
-  'verse',
-  'marin'
+  'אייל',
+  'הילה',
+  'לביא',
+  'מאיה',
+  'עמית',
+  'רוני',
 ];
 
 // Minimum file size in bytes (30KB = 30720 bytes)

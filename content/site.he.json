@@ -103,12 +103,12 @@
     "playing": "מנגן הקלטה",
     "browserBlocked": "הדפדפן חסם ניגון – נסה שוב / בדוק שהסאונד פעיל",
     "voices": [
-      { "id": "ash", "name": "רון (זכר)", "default": false },
-      { "id": "coral", "name": "מיכל (נקבה)", "default": false },
-      { "id": "sage", "name": "דנה (נקבה)", "default": false },
-      { "id": "shimmer", "name": "תמר (נקבה)", "default": false },
-      { "id": "verse", "name": "דני (זכר)", "default": false },
-      { "id": "marin", "name": "ליאל (נקבה)", "default": false }
+      { "id": "אייל", "name": "אייל (זכר)", "default": true },
+      { "id": "הילה", "name": "הילה (נקבה)", "default": false },
+      { "id": "לביא", "name": "לביא (זכר)", "default": false },
+      { "id": "מאיה", "name": "מאיה (נקבה)", "default": false },
+      { "id": "עמית", "name": "עמית (זכר)", "default": false },
+      { "id": "רוני", "name": "רוני (נקבה)", "default": false }
     ]
   },
   "callDemos": {

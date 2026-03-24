@@ -40,7 +40,6 @@ export default function AccessibilityWidget() {
               s.setAttribute("data-size", "medium");
               s.setAttribute("data-color", "#3b82f6");
               s.setAttribute("data-language", "he");
-              s.setAttribute("data-trigger", "1");
               s.setAttribute("data-statement-text", "הצהרת נגישות");
               s.setAttribute("data-statement-url", "/accessibility");
               s.setAttribute("aria-label", "פתיחת תפריט נגישות");

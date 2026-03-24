@@ -8,7 +8,13 @@ export const metadata: Metadata = {
   title: 'CRM חכם לעסקים | פרוסאס – ניהול לידים ולקוחות עם AI',
   description: 'פרוסאס מציעה CRM חכם לעסקים עם AI מובנה — ניהול לידים אוטומטי, מעקב אחר לקוחות, ותזכורות פולואפ. כל הכלים במקום אחד, בעברית.',
   keywords: 'CRM חכם, CRM לעסקים, ניהול לידים, מערכת CRM, CRM AI, ניהול לקוחות, פרוסאס, פרו סאס, ProSaaS, מוקד שיחות',
-  alternates: { canonical: `${siteUrl}/he/smart-crm` },
+  alternates: {
+    canonical: `${siteUrl}/he/smart-crm`,
+    languages: {
+      he: `${siteUrl}/he/smart-crm`,
+      en: `${siteUrl}/ai-crm`,
+    },
+  },
   openGraph: {
     title: 'CRM חכם לעסקים | פרוסאס',
     description: 'CRM חכם עם AI לניהול לידים ולקוחות אוטומטי.',

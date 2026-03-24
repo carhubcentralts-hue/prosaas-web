@@ -29,13 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: bilingualAlternates(siteUrl, `${siteUrl}/en`),
     },
     {
-      url: `${siteUrl}/he`,
-      lastModified: today,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-      alternates: bilingualAlternates(`${siteUrl}/he`, `${siteUrl}/en`),
-    },
-    {
       url: `${siteUrl}/en`,
       lastModified: today,
       changeFrequency: 'weekly',
@@ -43,10 +36,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: bilingualAlternates(`${siteUrl}/he`, `${siteUrl}/en`),
     },
 
-    // Hebrew feature pages
-    { url: `${siteUrl}/he/ai-system`,    lastModified: today, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${siteUrl}/he/smart-crm`,    lastModified: today, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${siteUrl}/he/whatsapp-bot`, lastModified: today, changeFrequency: 'monthly', priority: 0.9 },
+    // Hebrew feature pages (with English hreflang alternates)
+    {
+      url: `${siteUrl}/he/ai-system`,
+      lastModified: today,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+      alternates: bilingualAlternates(`${siteUrl}/he/ai-system`, `${siteUrl}/ai-call-center`),
+    },
+    {
+      url: `${siteUrl}/he/smart-crm`,
+      lastModified: today,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+      alternates: bilingualAlternates(`${siteUrl}/he/smart-crm`, `${siteUrl}/ai-crm`),
+    },
+    {
+      url: `${siteUrl}/he/whatsapp-bot`,
+      lastModified: today,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+      alternates: bilingualAlternates(`${siteUrl}/he/whatsapp-bot`, `${siteUrl}/whatsapp-automation`),
+    },
 
     // About (Hebrew ↔ English)
     {
@@ -64,10 +75,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: bilingualAlternates(`${siteUrl}/he/about`, `${siteUrl}/about`),
     },
 
-    // English top-level pages
-    { url: `${siteUrl}/ai-call-center`,            lastModified: today, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${siteUrl}/whatsapp-automation`,        lastModified: today, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${siteUrl}/ai-crm`,                    lastModified: today, changeFrequency: 'monthly', priority: 0.85 },
+    // English feature pages (with Hebrew hreflang alternates where applicable)
+    {
+      url: `${siteUrl}/ai-call-center`,
+      lastModified: today,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+      alternates: bilingualAlternates(`${siteUrl}/he/ai-system`, `${siteUrl}/ai-call-center`),
+    },
+    {
+      url: `${siteUrl}/whatsapp-automation`,
+      lastModified: today,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+      alternates: bilingualAlternates(`${siteUrl}/he/whatsapp-bot`, `${siteUrl}/whatsapp-automation`),
+    },
+    {
+      url: `${siteUrl}/ai-crm`,
+      lastModified: today,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+      alternates: bilingualAlternates(`${siteUrl}/he/smart-crm`, `${siteUrl}/ai-crm`),
+    },
     { url: `${siteUrl}/ai-answering-service`,       lastModified: today, changeFrequency: 'monthly', priority: 0.8  },
     { url: `${siteUrl}/ai-for-small-business`,      lastModified: today, changeFrequency: 'monthly', priority: 0.8  },
     { url: `${siteUrl}/ai-lead-management`,         lastModified: today, changeFrequency: 'monthly', priority: 0.8  },

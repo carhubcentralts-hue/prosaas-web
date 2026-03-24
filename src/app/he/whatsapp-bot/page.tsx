@@ -5,13 +5,19 @@ import SEOPageLayout from '../../../components/SEOPageLayout'
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website'
 
 export const metadata: Metadata = {
-  title: 'בוט וואטסאפ לעסקים | פרוסאס – מענה אוטומטי 24/7',
-  description: 'פרוסאס מספקת בוט וואטסאפ חכם לעסקים — מענה אוטומטי להודעות, סינון לידים ותיאום פגישות, 24 שעות ביממה. הפסיקו לפספס לקוחות.',
-  keywords: 'בוט וואטסאפ לעסקים, אוטומציה וואטסאפ, וואטסאפ בוט, מענה אוטומטי וואטסאפ, פרוסאס, פרו סאס, ProSaaS',
-  alternates: { canonical: `${siteUrl}/he/whatsapp-bot` },
+  title: 'בוט ווצאפ חכם לעסקים | פרוסאס – נציג לוואטסאפ אוטומטי 24/7',
+  description: 'פרוסאס מספקת בוט ווצאפ חכם ונציג לוואטסאפ לעסקים — מענה אוטומטי מיידי לכל הודעה, סינון לידים ותיאום פגישות, 24 שעות ביממה. הפסיקו לפספס לקוחות.',
+  keywords: 'בוט ווצאפ חכם, נציג לוואטסאפ, בוט וואטסאפ לעסקים, אוטומציה וואטסאפ, מענה אוטומטי וואטסאפ, נציג ווצאפ אוטומטי, פרוסאס, פרו סאס, ProSaaS',
+  alternates: {
+    canonical: `${siteUrl}/he/whatsapp-bot`,
+    languages: {
+      he: `${siteUrl}/he/whatsapp-bot`,
+      en: `${siteUrl}/whatsapp-automation`,
+    },
+  },
   openGraph: {
-    title: 'בוט וואטסאפ לעסקים | פרוסאס',
-    description: 'מענה אוטומטי לוואטסאפ 24/7 — לכידת לידים וסינון אוטומטי.',
+    title: 'בוט ווצאפ חכם לעסקים | פרוסאס',
+    description: 'נציג לוואטסאפ אוטומטי — מענה מיידי 24/7, לכידת לידים וסינון אוטומטי.',
     type: 'website',
     locale: 'he_IL',
   },
@@ -23,9 +29,9 @@ export default function HeWhatsAppBotPage() {
       <div className="bg-gradient-to-br from-green-50 via-white to-blue-50" dir="rtl">
         <section className="max-w-6xl mx-auto px-4 py-16 md:py-24">
           <div className="max-w-3xl">
-            <p className="text-green-600 font-semibold mb-3 text-sm uppercase tracking-wide">בוט וואטסאפ לעסקים</p>
+            <p className="text-green-600 font-semibold mb-3 text-sm uppercase tracking-wide">בוט ווצאפ חכם לעסקים</p>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              בוט וואטסאפ לעסקים — מענה אוטומטי 24/7
+              בוט ווצאפ חכם — נציג לוואטסאפ אוטומטי 24/7
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               אל תפספסו יותר לקוחות בגלל שלא ענינם להודעת וואטסאפ. פרוסאס עונה אוטומטית לכל הודעה, מסנן לידים ומנתב שיחות — גם בלילה, גם בשבת.
@@ -41,7 +47,7 @@ export default function HeWhatsAppBotPage() {
 
       <div className="max-w-6xl mx-auto px-4 py-12" dir="rtl">
         <section>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">למה בוט וואטסאפ לעסק שלכם?</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">למה בוט ווצאפ חכם לעסק שלכם?</h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-4">
             וואטסאפ הוא ערוץ התקשורת העיקרי עם לקוחות בישראל. כשלקוח שולח הודעה ולא מקבל מענה מהיר — הוא פונה למתחרה. בוט וואטסאפ של פרוסאס עונה תוך שניות, כל שעה.
           </p>

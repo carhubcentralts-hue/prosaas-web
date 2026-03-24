@@ -14,6 +14,19 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        // Ensure sitemap.xml is always served as XML.
+        // Next.js MetadataRoute and route handlers set this too, but Vercel's
+        // CDN layer can override it. Declaring it here forces the correct
+        // Content-Type at the edge so browsers and crawlers parse it as XML.
+        source: '/sitemap.xml',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/xml; charset=utf-8',
+          },
+        ],
+      },
+      {
         source: '/:path((?!api|_next/static|_next/image|favicon\\.ico).*)',
         headers: [
           {

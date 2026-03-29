@@ -60,21 +60,20 @@ ${urlElements}
 }
 
 export async function GET(): Promise<NextResponse> {
-  const today = new Date().toISOString().split('T')[0];
   const url = BASE_URL;
 
   const staticEntries: SitemapEntry[] = [
     // Homepage (Hebrew default ↔ English)
     {
       url,
-      lastmod: today,
+      lastmod: '2026-01-15',
       changefreq: 'weekly',
       priority: 1.0,
       alternates: bilingualAlternates(url, `${url}/en`),
     },
     {
       url: `${url}/en`,
-      lastmod: today,
+      lastmod: '2026-01-15',
       changefreq: 'weekly',
       priority: 0.9,
       alternates: bilingualAlternates(url, `${url}/en`),
@@ -83,21 +82,21 @@ export async function GET(): Promise<NextResponse> {
     // Hebrew feature pages
     {
       url: `${url}/he/ai-system`,
-      lastmod: today,
+      lastmod: '2025-10-01',
       changefreq: 'monthly',
       priority: 0.9,
       alternates: bilingualAlternates(`${url}/he/ai-system`, `${url}/ai-call-center`),
     },
     {
       url: `${url}/he/smart-crm`,
-      lastmod: today,
+      lastmod: '2025-10-01',
       changefreq: 'monthly',
       priority: 0.9,
       alternates: bilingualAlternates(`${url}/he/smart-crm`, `${url}/ai-crm`),
     },
     {
       url: `${url}/he/whatsapp-bot`,
-      lastmod: today,
+      lastmod: '2025-10-01',
       changefreq: 'monthly',
       priority: 0.9,
       alternates: bilingualAlternates(`${url}/he/whatsapp-bot`, `${url}/whatsapp-automation`),
@@ -106,14 +105,14 @@ export async function GET(): Promise<NextResponse> {
     // About (Hebrew ↔ English)
     {
       url: `${url}/he/about`,
-      lastmod: today,
+      lastmod: '2025-10-01',
       changefreq: 'monthly',
       priority: 0.8,
       alternates: bilingualAlternates(`${url}/he/about`, `${url}/about`),
     },
     {
       url: `${url}/about`,
-      lastmod: today,
+      lastmod: '2025-10-01',
       changefreq: 'monthly',
       priority: 0.8,
       alternates: bilingualAlternates(`${url}/he/about`, `${url}/about`),
@@ -122,46 +121,46 @@ export async function GET(): Promise<NextResponse> {
     // English feature pages
     {
       url: `${url}/ai-call-center`,
-      lastmod: today,
+      lastmod: '2025-10-01',
       changefreq: 'monthly',
       priority: 0.85,
       alternates: bilingualAlternates(`${url}/he/ai-system`, `${url}/ai-call-center`),
     },
     {
       url: `${url}/whatsapp-automation`,
-      lastmod: today,
+      lastmod: '2025-10-01',
       changefreq: 'monthly',
       priority: 0.85,
       alternates: bilingualAlternates(`${url}/he/whatsapp-bot`, `${url}/whatsapp-automation`),
     },
     {
       url: `${url}/ai-crm`,
-      lastmod: today,
+      lastmod: '2025-10-01',
       changefreq: 'monthly',
       priority: 0.85,
       alternates: bilingualAlternates(`${url}/he/smart-crm`, `${url}/ai-crm`),
     },
-    { url: `${url}/ai-answering-service`,       lastmod: today, changefreq: 'monthly', priority: 0.8  },
-    { url: `${url}/ai-for-small-business`,      lastmod: today, changefreq: 'monthly', priority: 0.8  },
-    { url: `${url}/ai-lead-management`,         lastmod: today, changefreq: 'monthly', priority: 0.8  },
-    { url: `${url}/ai-for-moving-companies`,    lastmod: today, changefreq: 'monthly', priority: 0.7  },
-    { url: `${url}/ai-for-dental-clinics`,      lastmod: today, changefreq: 'monthly', priority: 0.7  },
-    { url: `${url}/ai-for-real-estate`,         lastmod: today, changefreq: 'monthly', priority: 0.7  },
-    { url: `${url}/ai-for-law-firms`,           lastmod: today, changefreq: 'monthly', priority: 0.7  },
-    { url: `${url}/ai-for-cleaning-companies`,  lastmod: today, changefreq: 'monthly', priority: 0.7  },
-    { url: `${url}/ai-for-property-management`, lastmod: today, changefreq: 'monthly', priority: 0.7  },
+    { url: `${url}/ai-answering-service`,       lastmod: '2025-10-01', changefreq: 'monthly', priority: 0.8  },
+    { url: `${url}/ai-for-small-business`,      lastmod: '2025-10-01', changefreq: 'monthly', priority: 0.8  },
+    { url: `${url}/ai-lead-management`,         lastmod: '2025-10-01', changefreq: 'monthly', priority: 0.8  },
+    { url: `${url}/ai-for-moving-companies`,    lastmod: '2025-10-01', changefreq: 'monthly', priority: 0.7  },
+    { url: `${url}/ai-for-dental-clinics`,      lastmod: '2025-10-01', changefreq: 'monthly', priority: 0.7  },
+    { url: `${url}/ai-for-real-estate`,         lastmod: '2025-10-01', changefreq: 'monthly', priority: 0.7  },
+    { url: `${url}/ai-for-law-firms`,           lastmod: '2025-10-01', changefreq: 'monthly', priority: 0.7  },
+    { url: `${url}/ai-for-cleaning-companies`,  lastmod: '2025-10-01', changefreq: 'monthly', priority: 0.7  },
+    { url: `${url}/ai-for-property-management`, lastmod: '2025-10-01', changefreq: 'monthly', priority: 0.7  },
 
     // Blog indexes (Hebrew ↔ English)
     {
       url: `${url}/he/blog`,
-      lastmod: today,
+      lastmod: '2025-01-20',
       changefreq: 'weekly',
       priority: 0.85,
       alternates: bilingualAlternates(`${url}/he/blog`, `${url}/blog`),
     },
     {
       url: `${url}/blog`,
-      lastmod: today,
+      lastmod: '2025-01-05',
       changefreq: 'weekly',
       priority: 0.8,
       alternates: bilingualAlternates(`${url}/he/blog`, `${url}/blog`),
@@ -170,47 +169,47 @@ export async function GET(): Promise<NextResponse> {
     // Legal / utility pages
     {
       url: `${url}/privacy`,
-      lastmod: today,
+      lastmod: '2025-06-01',
       changefreq: 'yearly',
       priority: 0.4,
       alternates: bilingualAlternates(`${url}/privacy`, `${url}/en/privacy`),
     },
     {
       url: `${url}/terms`,
-      lastmod: today,
+      lastmod: '2025-06-01',
       changefreq: 'yearly',
       priority: 0.4,
       alternates: bilingualAlternates(`${url}/terms`, `${url}/en/terms`),
     },
     {
       url: `${url}/en/privacy`,
-      lastmod: today,
+      lastmod: '2025-06-01',
       changefreq: 'yearly',
       priority: 0.4,
       alternates: bilingualAlternates(`${url}/privacy`, `${url}/en/privacy`),
     },
     {
       url: `${url}/en/terms`,
-      lastmod: today,
+      lastmod: '2025-06-01',
       changefreq: 'yearly',
       priority: 0.4,
       alternates: bilingualAlternates(`${url}/terms`, `${url}/en/terms`),
     },
-    { url: `${url}/accessibility`, lastmod: today, changefreq: 'yearly', priority: 0.4 },
+    { url: `${url}/accessibility`, lastmod: '2025-06-01', changefreq: 'yearly', priority: 0.4 },
   ];
 
-  // Dynamic English blog posts
-  const enBlogEntries: SitemapEntry[] = blogPosts.map(({ slug }) => ({
+  // Dynamic English blog posts – use each post's actual publish date
+  const enBlogEntries: SitemapEntry[] = blogPosts.map(({ slug, date }) => ({
     url: `${url}/blog/${slug}`,
-    lastmod: today,
+    lastmod: date,
     changefreq: 'monthly',
     priority: 0.7,
   }));
 
-  // Dynamic Hebrew blog posts
-  const heBlogEntries: SitemapEntry[] = blogPostsHe.map(({ slug }) => ({
+  // Dynamic Hebrew blog posts – use each post's actual publish date
+  const heBlogEntries: SitemapEntry[] = blogPostsHe.map(({ slug, date }) => ({
     url: `${url}/he/blog/${slug}`,
-    lastmod: today,
+    lastmod: date,
     changefreq: 'monthly',
     priority: 0.75,
   }));

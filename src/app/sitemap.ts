@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog-posts'
 import { blogPostsHe } from '@/lib/blog-posts-he'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website'
+const BASE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website').replace(/\/$/, '')
 
 function bilingual(he: string, en: string): NonNullable<MetadataRoute.Sitemap[number]['alternates']> {
   return { languages: { he, en, 'x-default': he } }

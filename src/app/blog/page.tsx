@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <SEOPageLayout>
+    <SEOPageLayout alternateUrl="/he/blog">
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">ProSaaS Blog</h1>

@@ -66,7 +66,7 @@ export default async function BlogPostPage({ params }: Props) {
   const relatedPosts = blogPosts.filter(p => p.slug !== slug).slice(0, 3)
 
   return (
-    <SEOPageLayout>
+    <SEOPageLayout alternateUrl="/he/blog">
       <StructuredData
         type="article"
         headline={post.title}

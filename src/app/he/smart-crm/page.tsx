@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function HeCRMPage() {
   return (
-    <SEOPageLayout lang="he">
+    <SEOPageLayout lang="he" alternateUrl="/ai-crm">
       <div className="bg-gradient-to-br from-indigo-50 via-white to-blue-100" dir="rtl">
         <section className="max-w-6xl mx-auto px-4 py-16 md:py-24">
           <div className="max-w-3xl">

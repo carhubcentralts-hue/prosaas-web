@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   keywords: 'ai call center system, AI call center software, automated call center, voice bot, AI answering service, business phone automation, ProSaaS, PROSAAS, פרוסאס, פרו סאס',
   alternates: {
     canonical: '/ai-call-center',
+    languages: { 'en': '/ai-call-center', 'he': '/he/ai-system' },
   },
   openGraph: {
     title: 'AI Call Center Software | ProSaaS',
@@ -42,7 +43,7 @@ const faqItems = [
 
 export default function AICallCenterPage() {
   return (
-    <SEOPageLayout>
+    <SEOPageLayout alternateUrl="/he/ai-system">
       <StructuredData type="faq" items={faqItems} />
       <div className="bg-gradient-to-br from-blue-50 via-white to-blue-100">
         {/* Hero */}

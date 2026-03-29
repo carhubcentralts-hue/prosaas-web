@@ -1,9 +1,11 @@
+import type { Metadata } from 'next'
 import Link from 'next/link';
 import content from '../../../content/site.he.json';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: `${content.accessibility.title} - ${content.site.name}`,
   description: 'הצהרת נגישות לאתר ProSaaS - מחויבות לנגישות דיגיטלית לפי תקן ישראלי 5568',
+  alternates: { canonical: '/accessibility' },
 };
 
 export default function AccessibilityPage() {

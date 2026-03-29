@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import SEOPageLayout from '../../../../components/SEOPageLayout'
 import StructuredData from '../../../../components/StructuredData'
 import { blogPostsHe, getBlogPostHe, getAllBlogSlugsHe } from '../../../../lib/blog-posts-he'
+import { siteUrl } from '@/lib/site-url'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -17,7 +18,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = getBlogPostHe(slug)
   if (!post) return {}
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website'
   return {
     title: post.title,
     description: post.description,
@@ -90,7 +90,6 @@ export default async function HebrewBlogPostPage({ params }: Props) {
   const post = getBlogPostHe(slug)
   if (!post) notFound()
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website'
   const relatedPosts = blogPostsHe.filter(p => p.slug !== slug).slice(0, 3)
 
   return (

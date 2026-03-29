@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SEOPageLayout from '../../../components/SEOPageLayout'
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website'
+import { siteUrl } from '@/lib/site-url'
 
 export const metadata: Metadata = {
   title: 'בוט ווצאפ חכם לעסקים | פרוסאס – נציג לוואטסאפ אוטומטי 24/7',

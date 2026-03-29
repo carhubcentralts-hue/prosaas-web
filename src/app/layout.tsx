@@ -5,10 +5,9 @@ import "./globals.css";
 import content from "../../content/site.he.json";
 import AccessibilityWidget from "../components/AccessibilityWidget";
 import StructuredData from "../components/StructuredData";
+import { siteUrl } from "../lib/site-url";
 
 const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

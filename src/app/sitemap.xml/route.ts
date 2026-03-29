@@ -1,7 +1,6 @@
 import { blogPosts } from '@/lib/blog-posts'
 import { blogPostsHe } from '@/lib/blog-posts-he'
-
-const BASE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://prosaas.website').replace(/\/$/, '')
+import { siteUrl as BASE_URL } from '@/lib/site-url'
 
 interface SitemapEntry {
   url: string

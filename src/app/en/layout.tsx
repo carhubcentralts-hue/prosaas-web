@@ -1,14 +1,6 @@
 import type { Metadata } from 'next'
-import { siteUrl } from '@/lib/site-url'
 
 export const metadata: Metadata = {
-  alternates: {
-    canonical: `${siteUrl}/en`,
-    languages: {
-      'he': siteUrl,
-      'en': `${siteUrl}/en`,
-    },
-  },
   openGraph: {
     locale: 'en_US',
     alternateLocale: 'he_IL',

@@ -148,17 +148,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   // English blog posts
-  const enBlogEntries: MetadataRoute.Sitemap = blogPosts.map(({ slug }) => ({
+  const enBlogEntries: MetadataRoute.Sitemap = blogPosts.map(({ slug, date }) => ({
     url: `${url}/blog/${slug}`,
-    lastModified: '2026-03-01',
+    lastModified: date,
     changeFrequency: 'monthly',
     priority: 0.7,
   }))
 
   // Hebrew blog posts
-  const heBlogEntries: MetadataRoute.Sitemap = blogPostsHe.map(({ slug }) => ({
+  const heBlogEntries: MetadataRoute.Sitemap = blogPostsHe.map(({ slug, date }) => ({
     url: `${url}/he/blog/${slug}`,
-    lastModified: '2026-03-01',
+    lastModified: date,
     changeFrequency: 'monthly',
     priority: 0.75,
   }))

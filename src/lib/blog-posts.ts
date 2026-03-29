@@ -13,7 +13,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'how-to-stop-losing-leads',
     title: 'Why Businesses Lose Leads (And How AI Fixes It)',
     description: 'Most businesses lose 50-70% of their leads not from bad service but from slow response times. Discover how AI automation captures and converts every lead.',
-    date: '2024-11-15',
+    date: '2026-01-05',
     readTime: '7 min read',
     category: 'Lead Management',
     content: `
@@ -96,7 +96,7 @@ If your business receives inquiries by phone or WhatsApp and you're not respondi
     slug: 'ai-vs-human-receptionist',
     title: "AI vs Human Receptionist: What's Better for Your Business?",
     description: 'Comparing the real costs, capabilities, and limitations of AI receptionists versus human receptionists to help you make the right choice for your business.',
-    date: '2024-11-20',
+    date: '2026-01-12',
     readTime: '8 min read',
     category: 'Business Automation',
     content: `
@@ -215,7 +215,7 @@ Yes — ProSaaS AI is specifically trained for Hebrew, including slang and busin
     slug: 'whatsapp-automation-increases-sales',
     title: 'How WhatsApp Automation Increases Sales by 30%',
     description: 'The data behind WhatsApp automation\'s impact on sales conversion, response rates, and customer satisfaction — and how to implement it for your business.',
-    date: '2024-11-25',
+    date: '2026-01-19',
     readTime: '6 min read',
     category: 'WhatsApp',
     content: `
@@ -299,7 +299,7 @@ For most businesses, the ROI is positive within the first month. The cost of the
     slug: 'what-is-ai-crm',
     title: 'What is AI CRM? A Complete Guide for Business Owners',
     description: 'A practical guide explaining what AI CRM is, how it differs from traditional CRM, and how to choose the right AI CRM for your business.',
-    date: '2024-12-01',
+    date: '2026-01-26',
     readTime: '9 min read',
     category: 'CRM',
     content: `
@@ -405,7 +405,7 @@ AI starts providing value immediately with basic data. As it accumulates more da
     slug: 'improve-response-time',
     title: '10 Ways to Improve Response Time with AI',
     description: 'Practical strategies for using AI to respond faster to customer inquiries, reduce wait times, and improve customer satisfaction across all channels.',
-    date: '2024-12-05',
+    date: '2026-02-02',
     readTime: '7 min read',
     category: 'Customer Service',
     content: `
@@ -502,7 +502,7 @@ Well-configured AI responses feel helpful and relevant. Customers care about get
     slug: 'automate-customer-support',
     title: 'How to Automate Customer Support Without Losing the Human Touch',
     description: 'A practical framework for automating customer support with AI while maintaining the personal, human experience that builds lasting customer relationships.',
-    date: '2024-12-10',
+    date: '2026-02-09',
     readTime: '8 min read',
     category: 'Customer Service',
     content: `
@@ -632,7 +632,7 @@ Yes. Basic customer support automation starts at ₪600/month — typically less
     slug: 'ai-for-small-business-guide',
     title: 'AI for Small Business: A Practical Guide',
     description: 'A step-by-step practical guide for small business owners on implementing AI tools to automate communication, manage leads, and grow revenue without a tech team.',
-    date: '2024-12-15',
+    date: '2026-02-16',
     readTime: '10 min read',
     category: 'Small Business',
     content: `
@@ -785,7 +785,7 @@ Configure a simple escalation path — when the AI is unsure, it collects inform
     slug: 'missed-calls-cost-businesses',
     title: 'The True Cost of Missed Calls for Businesses',
     description: 'A data-driven analysis of what missed calls really cost businesses in lost revenue, customer lifetime value, and competitive disadvantage.',
-    date: '2024-12-20',
+    date: '2026-02-23',
     readTime: '6 min read',
     category: 'Business Growth',
     content: `
@@ -897,7 +897,7 @@ Most businesses are live within 3-5 business days with ProSaaS.
     slug: 'crm-vs-spreadsheets',
     title: 'CRM vs Spreadsheets: Why AI CRM Wins',
     description: 'An honest comparison of spreadsheets versus AI CRM for managing leads and customers — including when spreadsheets are fine and when you need to upgrade.',
-    date: '2024-12-25',
+    date: '2026-03-02',
     readTime: '7 min read',
     category: 'CRM',
     content: `
@@ -1025,7 +1025,7 @@ Even basic AI CRM provides significant advantages over spreadsheets for contact 
     slug: 'ai-call-center-benefits',
     title: 'The Benefits of AI Call Center Software',
     description: 'A comprehensive look at the key benefits of implementing AI call center software — from cost savings to improved customer experience and competitive advantage.',
-    date: '2025-01-05',
+    date: '2026-03-09',
     readTime: '7 min read',
     category: 'AI Call Center',
     content: `

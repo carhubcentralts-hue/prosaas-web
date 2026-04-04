@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: `%s | פרו סאס - ProSaaS`,
   },
   description: content.site.description,
-  keywords: "ProSaaS, PROSAAS, PRO SAAS, Pro SaaS, פרוסאס, פרו סאס, פרו-סאס, prosaas.website, מערכת פרוסאס, נציג שיחות AI, נציג טלפוני חכם, נציג טלפוני אוטומטי, נציג AI לעסקים, נציג דיגיטלי לעסקים, מענה טלפוני חכם, בוט קולי חכם, בוט וואטסאפ חכם, בוט ווצאפ חכם, נציג לוואטסאפ, ai call center system, whatsapp automation for business, crm with ai, ai answering service, מערכת מענה אוטומטי לעסקים, CRM חכם לעסקים, ניהול לידים, AI לעסקים קטנים, פרוסאס מוקד שיחות",
+  keywords: "ProSaaS, PROSAAS, PRO SAAS, Pro SaaS, פרוסאס, פרו סאס, פרו-סאס, prosaas.website, מערכת פרוסאס, נציג שיחות AI, נציג טלפוני חכם, נציג טלפוני אוטומטי, נציג AI לעסקים, נציג דיגיטלי לעסקים, מענה טלפוני חכם, בוט קולי, בוט קולי חכם, בוט קולי לעסקים, בוט קולי AI, בוט וואטסאפ, בוט ווצאפ, בוט ווצאפ חכם, בוט וואטסאפ חכם, בוט וואטסאפ לעסקים, נציג לוואטסאפ, ai call center system, whatsapp automation for business, whatsapp bot for business, crm with ai, ai answering service, ai לעסקים, AI לעסקים, בינה מלאכותית לעסקים, מערכת מענה אוטומטי לעסקים, CRM חכם לעסקים, ניהול לידים, AI לעסקים קטנים, פרוסאס מוקד שיחות, מוקד שיחות AI, אוטומציה לעסקים, פתרון AI לעסק",
   alternates: {
     canonical: siteUrl,
     languages: {

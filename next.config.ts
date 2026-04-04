@@ -9,7 +9,14 @@ const nextConfig: NextConfig = {
     // under Project → Settings → Domains, not in application code.
     //
     // NOTE: /he→/ redirect is handled by src/app/he/page.tsx via permanentRedirect('/').
-    return []
+    return [
+      // Redirect old Hebrew URL (404 in GSC) to the current route
+      {
+        source: '/he/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-ai-%D7%9C%D7%A2%D7%A1%D7%A7%D7%99%D7%9D',
+        destination: '/he/ai-system',
+        permanent: true,
+      },
+    ]
   },
   async headers() {
     return [
@@ -19,6 +26,16 @@ const nextConfig: NextConfig = {
           {
             key: 'X-Robots-Tag',
             value: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+          },
+        ],
+      },
+      // Prevent Google from indexing the PWA manifest file
+      {
+        source: '/site.webmanifest',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex',
           },
         ],
       },

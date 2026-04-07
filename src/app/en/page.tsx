@@ -292,7 +292,7 @@ export default function EnglishHomePage() {
                 </div>
               </a>
               <a
-                href="tel:0549750505"
+                href="tel:0557270844"
                 className="flex items-center gap-4 bg-blue-600 text-white p-6 rounded-2xl hover:bg-blue-700 transition"
                 aria-label="Call ProSaaS"
               >
@@ -301,7 +301,7 @@ export default function EnglishHomePage() {
                 </svg>
                 <div>
                   <span className="text-lg font-semibold block">Call Us</span>
-                  <span className="text-blue-100 text-sm">0549750505</span>
+                  <span className="text-blue-100 text-sm">055-7270844</span>
                 </div>
               </a>
             </div>

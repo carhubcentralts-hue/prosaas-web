@@ -111,5 +111,5 @@ app.post('/webhook/leads', express.json(), (req, res) => {
 ## Support
 For questions or issues with the webhook integration, contact:
 - Email: support@prosaas.pro
-- Phone: 054-9750505
+- Phone: 055-7270844
 - WhatsApp: 055-7270844

@@ -58,7 +58,15 @@ export async function GET() {
     // Hebrew feature pages
     { url: `${u}/he/ai-system`,   lastModified: '2026-01-01', changeFrequency: 'monthly', priority: 0.9, alternates: bilingual(`${u}/he/ai-system`,   `${u}/ai-call-center`) },
     { url: `${u}/he/smart-crm`,   lastModified: '2026-01-01', changeFrequency: 'monthly', priority: 0.9, alternates: bilingual(`${u}/he/smart-crm`,   `${u}/ai-crm`) },
-    { url: `${u}/he/whatsapp-bot`,lastModified: '2026-01-01', changeFrequency: 'monthly', priority: 0.9, alternates: bilingual(`${u}/he/whatsapp-bot`, `${u}/whatsapp-automation`) },
+    { url: `${u}/he/whatsapp-bot`,lastModified: '2026-04-01', changeFrequency: 'monthly', priority: 0.9, alternates: bilingual(`${u}/he/whatsapp-bot`, `${u}/whatsapp-automation`) },
+
+    // New Hebrew SEO pages
+    { url: `${u}/he/voice-bot`,                        lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.9, alternates: bilingual(`${u}/he/voice-bot`, `${u}/ai-call-center`) },
+    { url: `${u}/he/ai-sales-agent`,                   lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${u}/he/customer-service-bot`,             lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${u}/he/whatsapp-bot-for-moving-companies`,lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${u}/he/whatsapp-bot-for-clinics`,         lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${u}/he/voice-bot-for-small-business`,     lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.8 },
 
     // About (Hebrew ↔ English)
     { url: `${u}/he/about`, lastModified: '2026-01-01', changeFrequency: 'monthly', priority: 0.8, alternates: bilingual(`${u}/he/about`, `${u}/about`) },

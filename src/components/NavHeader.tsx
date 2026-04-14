@@ -35,7 +35,7 @@ export default function NavHeader({
 
   const navLinks = [
     { href: featuresUrl, label: isHebrew ? 'יכולות' : 'Features', ariaLabel: isHebrew ? 'ניווט ליכולות' : 'Go to Features' },
-    { href: voiceDemoUrl, label: isHebrew ? 'הדגמת קול' : 'Voice Demo', ariaLabel: isHebrew ? 'ניווט להדגמת קול' : 'Go to Voice Demo' },
+    ...(isHebrew ? [{ href: voiceDemoUrl, label: 'הדגמת קול', ariaLabel: 'ניווט להדגמת קול' }] : []),
     { href: faqUrl, label: isHebrew ? 'שאלות נפוצות' : 'FAQ', ariaLabel: isHebrew ? 'ניווט לשאלות נפוצות' : 'Go to FAQ' },
     { href: blogUrl, label: isHebrew ? 'בלוג' : 'Blog', ariaLabel: isHebrew ? 'ניווט לבלוג' : 'Go to Blog' },
     { href: aboutUrl, label: isHebrew ? 'אודות' : 'About', ariaLabel: isHebrew ? 'ניווט לאודות' : 'Go to About' },

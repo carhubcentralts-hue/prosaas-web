@@ -36,6 +36,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+function parseInlineLinks(text: string): React.ReactNode {
+  const linkPattern = /\[([^\]]+)\]\(([^)]+)\)/g
+  const parts: React.ReactNode[] = []
+  let lastIndex = 0
+  let match: RegExpExecArray | null
+
+  while ((match = linkPattern.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index))
+    }
+    parts.push(
+      <Link key={match.index} href={match[2]} className="text-blue-600 hover:underline font-medium">
+        {match[1]}
+      </Link>
+    )
+    lastIndex = linkPattern.lastIndex
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex))
+  }
+
+  return parts.length === 0 ? text : parts.length === 1 ? parts[0] : <>{parts}</>
+}
+
 function renderMarkdown(content: string) {
   const lines = content.trim().split('\n')
   const elements: React.ReactNode[] = []
@@ -61,7 +86,7 @@ function renderMarkdown(content: string) {
     } else if (line.startsWith('**') && line.endsWith('**') && line.length > 4) {
       elements.push(
         <p key={key++} className="font-semibold text-gray-900 mt-4 mb-2">
-          {line.slice(2, -2)}
+          {parseInlineLinks(line.slice(2, -2))}
         </p>
       )
       i++
@@ -70,7 +95,7 @@ function renderMarkdown(content: string) {
       while (i < lines.length && lines[i].startsWith('- ')) {
         listItems.push(
           <li key={key++} className="text-lg text-gray-700 leading-relaxed mb-1">
-            {lines[i].slice(2)}
+            {parseInlineLinks(lines[i].slice(2))}
           </li>
         )
         i++
@@ -83,7 +108,7 @@ function renderMarkdown(content: string) {
     } else {
       elements.push(
         <p key={key++} className="text-lg text-gray-700 leading-relaxed mb-4">
-          {line}
+          {parseInlineLinks(line)}
         </p>
       )
       i++

@@ -43,7 +43,7 @@ function getOrganizationSchema() {
     name: 'ProSaaS',
     alternateName: ['פרוסאס', 'פרו סאס', 'PROSAAS', 'PRO SAAS'],
     url: siteUrl,
-    logo: `${siteUrl}/logo.svg`,
+    logo: `${siteUrl}/logo.png`,
     description: 'ProSaaS (פרוסאס) – AI-powered CRM, WhatsApp automation, and voice bot platform for businesses. Manage leads, calls, and customer communications automatically.',
     email: 'support@prosaas.pro',
     telephone: '+972549750505',
@@ -117,7 +117,7 @@ function getLocalBusinessSchema() {
     name: 'ProSaaS - פרוסאס',
     alternateName: ['פרוסאס', 'פרו סאס', 'PROSAAS', 'PRO SAAS'],
     url: siteUrl,
-    logo: `${siteUrl}/logo.svg`,
+    logo: `${siteUrl}/logo.png`,
     image: `${siteUrl}/opengraph-image.png`,
     description: 'ProSaaS – פרוסאס | פלטפורמת CRM, WhatsApp ובוט שיחות מבוססת AI לעסקים. מוקד שיחות חכם, ניהול לידים, תיעוד שיחות ומענה אוטומטי 24/7.',
     telephone: '+972549750505',
@@ -170,7 +170,7 @@ function getArticleSchema(props: ArticleSchemaProps) {
       url: siteUrl,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/logo.svg`,
+        url: `${siteUrl}/logo.png`,
       },
     },
   }

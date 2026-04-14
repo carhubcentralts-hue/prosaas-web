@@ -46,7 +46,7 @@ export default function NavHeader({
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link href={homeUrl} className="flex items-center flex-shrink-0" aria-label="ProSaaS – דף הבית / Home">
-          <Image src="/logo.svg" alt="ProSaaS" width={120} height={40} />
+          <Image src="/logo.png" alt="ProSaaS" width={120} height={40} />
         </Link>
 
         {/* Desktop Navigation */}

@@ -46,7 +46,7 @@ export default function SEOPageLayout({ children, lang = 'en', alternateUrl }: S
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
             <div>
-              <Image src="/logo.svg" alt="ProSaaS" width={120} height={40} className="mb-4" />
+              <Image src="/logo.png" alt="ProSaaS" width={120} height={40} className="mb-4" />
               <p className="text-gray-400 text-sm max-w-xs">
                 {isHebrew
                   ? 'פלטפורמת CRM, WhatsApp ובוט שיחות מבוססת AI לעסקים.'

@@ -10,7 +10,6 @@ const CALL_FILES: Record<string, string> = {
   'call-2': '/calls/call-2.mp3',
   'call-3': '/calls/call-3.mp3',
   'call-4': '/calls/call-4.mp3',
-  'call-5': '/calls/call-5.mp3',
 };
 
 interface CallStatus {
